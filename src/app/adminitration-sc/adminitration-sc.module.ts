@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardTeacherComponent } from './dashboard-teacher/dashboard-teacher.component';
@@ -12,7 +11,6 @@ import { DetailsStudentComponent } from './details-student/details-student.compo
 
 @NgModule({
   declarations: [
-    LoginComponent,
     RegisterComponent,
     HomeComponent,
     DashboardTeacherComponent,
