@@ -6,7 +6,7 @@ import { DashboardTeacherComponent } from './dashboard-teacher/dashboard-teacher
 import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
 import { DetailsCourseComponent } from './details-course/details-course.component';
 import { DetailsStudentComponent } from './details-student/details-student.component';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +19,9 @@ import { DetailsStudentComponent } from './details-student/details-student.compo
     DetailsStudentComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
   ]
 })
 export class AdminitrationScModule { }
