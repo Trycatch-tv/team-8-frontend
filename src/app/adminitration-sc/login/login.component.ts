@@ -11,14 +11,18 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 export class LoginComponent {
   emailControl: FormControl;
   emailForm: FormGroup;
+  passwordControl:FormControl;
 
   email:string='';
-  contrasena:string='';
+  password:string='';
+
 
   constructor() {
+    this.passwordControl = new FormControl('');
     this.emailControl = new FormControl('', [Validators.required, this.emailValidator]);
     this.emailForm = new FormGroup({
       email: this.emailControl,
+      password: this.passwordControl,
     });
   }
 
@@ -37,11 +41,9 @@ export class LoginComponent {
   handleSubmitFormLogin(event: Event) {
     event.preventDefault();
     //Se va enviarlos datos para la autenticacion
-    alert('Haz iniciado sesion ' + this.contrasena + this.email);
 
-
-    this.email='';
-    this.contrasena='';
+    this.passwordControl.reset();
+    this.emailControl.reset();
 
   }
 }
