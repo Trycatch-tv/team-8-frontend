@@ -1,0 +1,38 @@
+<nav class="bx-border flex z-10 w-full fixed top-0  left-0  bg-banner-bg text-white w-screen">
+    <div class="px-5 mx-2  py-6 flex w-full justify-between items-center">
+      <a class="text-3xl font-bold font-heading" routerLink="/student">
+        <!-- <img class="h-9" src="logo.png" alt="logo"> -->
+        Administration School
+      </a>
+      <!-- Nav Links -->
+      <!-- Header Icons -->
+      <div class="hidden xl:flex flex-1 items-center justify-end space-x-5 items-center">
+        <ul class="hidden md:flex px-4  font-semibold font-heading space-x-12">
+          <li><a class="hover:text-gray-200" routerLink="/student/courses">Courses</a></li>
+          <li><a class="hover:text-gray-200" routerLink="/student/courses">My courses</a></li>
+        </ul>
+        <!-- Sign In / Register      -->
+        <a class="flex items-center hover:text-gray-200" href="/login">
+          <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 12L13 12" stroke="#ffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 15L20.913 12.087V12.087C20.961 12.039 20.961 11.961 20.913 11.913V11.913L18 9" stroke="#ffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 5V4.5V4.5C16 3.67157 15.3284 3 14.5 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H14.5C15.3284 21 16 20.3284 16 19.5V19.5V19" stroke="#ffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        
+      </div>
+    </div>
+    <!-- Responsive navbar -->
+    <a class="xl:hidden flex mr-6 items-center" href="#">
+      <span class="flex absolute -mt-5 ml-4">
+        <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
+        </span>
+      </span>
+    </a>
+    <a class="navbar-burger self-center mr-12 xl:hidden" routerLink="#">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </a>
+  </nav>
