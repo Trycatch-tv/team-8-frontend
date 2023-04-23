@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminitrationScModule } from './adminitration-sc/adminitration-sc.module';
+import { StudentContentModule } from './student-content/student-content.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +17,8 @@ import { AdminitrationScModule } from './adminitration-sc/adminitration-sc.modul
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AdminitrationScModule
+    AdminitrationScModule,
+    StudentContentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
