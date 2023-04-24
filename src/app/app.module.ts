@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminitrationScModule } from './adminitration-sc/adminitration-sc.module';
 import { SidebarTeacherComponent } from './layout/sidebar-teacher/sidebar-teacher.component';
+import { DashboardAdminModule } from './dashboard-admin/dashboard-admin.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,9 @@ import { SidebarTeacherComponent } from './layout/sidebar-teacher/sidebar-teache
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AdminitrationScModule
+    AdminitrationScModule,
+    DashboardAdminModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
