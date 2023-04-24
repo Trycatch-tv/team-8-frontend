@@ -8,26 +8,35 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
+import { MyCoursesComponent } from './my-courses/my-courses.component';
+import { DetailMyCourseComponent } from './detail-my-course/detail-my-courses.component';
 
 const routes: Routes = [
   {
     path: 'student',
     component: HomeComponent,
-    children:[
+    children: [
       {
-        path:'courses',
-        component:ContainerCourseComponent
+        path: 'courses',
+        component: ContainerCourseComponent,
       },
       {
-      path:'detail-course/:id',
-      component:DetailCourseComponent
-    },
-     
-    {
-      path:'',
-      component:HomepageComponent
-    },
-  ]
+        path:'my-courses',
+        component:MyCoursesComponent
+      },
+      {
+        path: 'detail-course/:id',
+        component: DetailCourseComponent,
+      },
+      {
+        path: 'detail-my-course/:id',
+        component: DetailMyCourseComponent
+      },
+      {
+        path: '',
+        component: HomepageComponent
+      },
+    ]
   }
 ];
 
@@ -39,7 +48,10 @@ const routes: Routes = [
     ContainerCourseComponent,
     CardCourseComponent,
     NavBarComponent,
-    HomepageComponent
+    HomepageComponent,
+    MyCoursesComponent,
+    DetailMyCourseComponent,
+
   ],
   imports: [
     RouterModule.forChild(routes),
