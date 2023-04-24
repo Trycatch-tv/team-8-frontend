@@ -2,3 +2,157 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+.container-central {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 50px;
+}
+/* Header */
+
+nav {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+nav button:hover {
+  background-color: #f5f5f5;
+}
+
+nav button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
+}
+
+nav button svg {
+  fill: currentColor;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  color: #4a5568;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+nav a:hover {
+  color: #1a202c;
+}
+
+nav.dark {
+  background-color: #1a202c;
+  border-bottom: 1px solid red;
+}
+
+nav.dark button:hover {
+  background-color: rgb(72, 45, 48);
+}
+
+nav.dark button:focus {
+  box-shadow: 0 0 0 2px rgba(118, 169, 250, 0.5);
+}
+
+nav.dark a {
+  color: #cbd5e0;
+}
+
+nav.dark a:hover {
+  color: #0d0806;
+}
+
+/* Main */
+
+main {
+  margin-top: 80px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  font-size: 18px;
+  color: #4a5568;
+  margin-bottom: 0;
+}
+
+.card {
+  background-color: #000000;
+  border: 1px solid #030303;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 90px;
+  margin-bottom: 30px;
+}
+
+.card:hover {
+  box-shadow: 0 0 120px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px;
+  color: #fdfdfd;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #a3de2d;
+  color: #a3de2d;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #a3de2d;
+}
+
+.btn-primary {
+  background-color: #a3de2d;
+}
+
+.btn-primary:hover {
+  background-color: #a3de2d;
+}
+
+.btn-secondary {
+  background-color: #a3de2d;
+}
+
+.btn-secondary:hover {
+  background-color: #a3de2d;
+}
+
+.dark .card {
+  background-color:#a3de2d;
+  border: 1px solid #a3de2d;
+  color: #a3de2d;
+}
+
