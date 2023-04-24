@@ -9,6 +9,7 @@ import { SidebarTeacherComponent } from './layout/sidebar-teacher/sidebar-teache
 import { DashboardAdminModule } from './dashboard-admin/dashboard-admin.module';
 import { DashboardTeacherModule } from './dashboard-teacher/dashboard-teacher.module';
 import { SidebarAdminComponent } from './layout/sidebar-admin/sidebar-admin.component';
+import { StudentContentModule } from './student-content/student-content.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SidebarAdminComponent } from './layout/sidebar-admin/sidebar-admin.comp
     ReactiveFormsModule,
     AdminitrationScModule,
     DashboardAdminModule,
-    DashboardTeacherModule
+    DashboardTeacherModule,
+    StudentContentModule
 
   ],
   providers: [],
