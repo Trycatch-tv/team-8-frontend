@@ -5,25 +5,51 @@ import { HomeComponent } from './home/home.component';
 import { TableCoursesComponent } from './table-courses/table-courses.component';
 import { TableStudentsComponent } from './table-students/table-students.component';
 import { TableTeachersComponent } from './table-teachers/table-teachers.component';
-
+import { SidebarAdminComponent } from '../layout/sidebar-admin/sidebar-admin.component';
 
 const routes: Routes = [
 {
-  path:'dashboard-admin',
+  path:'dashboard-admin/home',
   component: HomeComponent,
   children: [
     {
-      path:'content-courses',
-      component: TableCoursesComponent
+      path:'',
+      component:SidebarAdminComponent
     },
+
+  ]
+},
+{
+  path:'dashboard-admin/content-students',
+  component:TableStudentsComponent,
+  children: [
     {
-      path:'content-students',
-      component: TableStudentsComponent
+      path:'',
+      component:SidebarAdminComponent
     },
+
+  ]
+},
+{
+  path:'dashboard-admin/content-courses',
+  component:TableCoursesComponent,
+  children: [
     {
-      path:'content-courses',
-      component:TableCoursesComponent
-    }
+      path:'',
+      component:SidebarAdminComponent
+    },
+
+  ]
+},
+{
+  path:'dashboard-admin/content-teachers',
+  component:TableTeachersComponent,
+  children: [
+    {
+      path:'',
+      component:SidebarAdminComponent
+    },
+
   ]
 }
 ];
