@@ -4,50 +4,41 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { TableCoursesComponent } from './table-courses/table-courses.component';
 import { TableStudentsComponent } from './table-students/table-students.component';
-import { TableTeachersComponent } from './table-teachers/table-teachers.component';
-import { SidebarAdminComponent } from '../layout/sidebar-admin/sidebar-admin.component';
+import { SidebarTeacherComponent } from '../layout/sidebar-teacher/sidebar-teacher.component';
+import { combineLatest } from 'rxjs';
+
 
 const routes: Routes = [
 {
-  path:'dashboard-admin/home',
+  path:'dashboard-teacher/home',
   component: HomeComponent,
   children: [
     {
       path:'',
-      component:SidebarAdminComponent
+      component:SidebarTeacherComponent
     },
 
   ]
-},
+}
+,
 {
-  path:'dashboard-admin/content-students',
+  path:'dashboard-teacher/content-students',
   component:TableStudentsComponent,
   children: [
     {
       path:'',
-      component:SidebarAdminComponent
+      component:SidebarTeacherComponent
     },
 
   ]
 },
 {
-  path:'dashboard-admin/content-courses',
+  path:'dashboard-teacher/content-courses',
   component:TableCoursesComponent,
   children: [
     {
       path:'',
-      component:SidebarAdminComponent
-    },
-
-  ]
-},
-{
-  path:'dashboard-admin/content-teachers',
-  component:TableTeachersComponent,
-  children: [
-    {
-      path:'',
-      component:SidebarAdminComponent
+      component:SidebarTeacherComponent
     },
 
   ]
@@ -58,4 +49,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class DashboardAdminRoutingModule { }
+export class DashboardTeacherRoutingModule { }

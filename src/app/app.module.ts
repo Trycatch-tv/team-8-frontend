@@ -7,11 +7,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AdminitrationScModule } from './adminitration-sc/adminitration-sc.module';
 import { SidebarTeacherComponent } from './layout/sidebar-teacher/sidebar-teacher.component';
 import { DashboardAdminModule } from './dashboard-admin/dashboard-admin.module';
+import { DashboardTeacherModule } from './dashboard-teacher/dashboard-teacher.module';
+import { SidebarAdminComponent } from './layout/sidebar-admin/sidebar-admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarTeacherComponent,
+    SidebarAdminComponent,
 
   ],
   imports: [
@@ -20,7 +23,8 @@ import { DashboardAdminModule } from './dashboard-admin/dashboard-admin.module';
     FormsModule,
     ReactiveFormsModule,
     AdminitrationScModule,
-    DashboardAdminModule
+    DashboardAdminModule,
+    DashboardTeacherModule
 
   ],
   providers: [],
