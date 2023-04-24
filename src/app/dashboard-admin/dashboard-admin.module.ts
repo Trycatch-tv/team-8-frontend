@@ -4,7 +4,7 @@ import { TableStudentsComponent } from './table-students/table-students.componen
 import { TableTeachersComponent } from './table-teachers/table-teachers.component';
 import { TableCoursesComponent } from './table-courses/table-courses.component';
 import { HomeComponent } from './home/home.component';
-
+import { DashboardAdminRoutingModule } from './dashboard-admin-routing.module';
 
 
 @NgModule({
@@ -15,7 +15,8 @@ import { HomeComponent } from './home/home.component';
     HomeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DashboardAdminRoutingModule
   ]
 })
 export class DashboardAdminModule { }
