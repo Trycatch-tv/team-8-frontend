@@ -10,6 +10,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { DetailMyCourseComponent } from './detail-my-course/detail-my-courses.component';
+import { StudentService } from '../services/student/student.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -21,8 +24,8 @@ const routes: Routes = [
         component: ContainerCourseComponent,
       },
       {
-        path:'my-courses',
-        component:MyCoursesComponent
+        path: 'my-courses',
+        component: MyCoursesComponent
       },
       {
         path: 'detail-course/:id',
@@ -53,9 +56,14 @@ const routes: Routes = [
     DetailMyCourseComponent,
 
   ],
+  providers: [
+    StudentService
+  ],
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
+    HttpClientModule,
+    FormsModule
   ]
 })
 export class StudentContentModule { }
