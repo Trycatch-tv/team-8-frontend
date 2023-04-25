@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { StudentData } from '../type';
 
 @Component({
   selector: 'app-card-course',
@@ -7,4 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class CardCourseComponent {
    @Input() route:string=''
+   @Input() data!:StudentData
 }
