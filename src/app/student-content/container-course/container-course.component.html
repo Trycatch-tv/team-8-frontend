@@ -3,7 +3,7 @@
     <!-- input-------search -->
     <!-- This is an example component -->
     <div class="max-w-2xl mx-auto ">
-        <form>
+        <!-- <form> -->
             <label for="default-search"
                 class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
             <div class="relative">
@@ -14,18 +14,29 @@
                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
                 </div>
-                <input type="search" id="default-search"
+                <input [(ngModel)]="inputSearchValue" type="search" id="default-search"
                     class="block outline-none p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Search courses..." required>
                 <button type="submit"
                     class="text-white absolute right-2.5 bottom-2.5 bg-text-title-card hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
             </div>
-        </form>
+        <!-- </form> -->
         <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
     </div>
     <!-- ------------------------------------------- -->
-    <div class="mt-10 px-20 w-full flex flex-wrap gap-4 justify-center">
-        <app-card-course [route]="'/student/detail-course/1'"></app-card-course>
+    <div class="mt-10 px-2 w-full flex flex-wrap gap-4 justify-center">
+        <!-- component -->
+        <button *ngIf="!courses" type="button"
+            class="bg-banner-bg h-max w-max rounded-lg text-white font-bold hover:bg-indigo-300 hover:cursor-not-allowed duration-[500ms,800ms]"
+            disabled>
+            <div class="h-5 w-5 border-t-transparent border-solid animate-spin rounded-full border-white border-4">
+            </div>
+            <div class="ml-2"> Processing... <div>
+                </div>
+            </div>
+        </button>
+        <app-card-course [data]="item" [route]="'/student/detail-course/'+ item.id"
+            *ngFor="let item of courses"></app-card-course>
     </div>
 
 </div>
