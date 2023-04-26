@@ -13,6 +13,24 @@ export class RegisterComponent {
 
   email:string='';
   password:string='';
+  selectedCity:string='';
+  cities = [
+    { label: 'Colombia', value: 'Colombia' },
+    { label: 'Estados Unidos', value: 'EEUU' },
+    { label: 'España', value: 'España' },
+    { label: 'Mexico', value: 'Mexico' },
+    { label: 'Perú', value: 'Peru' },
+    { label: 'Canadá', value: 'Canada' },
+    { label: 'Inglaterra', value: 'Inglaterra' },
+    { label: 'Italia', value: 'Italia' },
+    { label: 'Venezuela', value: 'Venezuela' },
+    { label: 'Chile', value: 'Chile' },
+    { label: 'Panamá', value: 'Panama' }
+  ];
+  name:string='';
+  phone:string='';
+  
+
 
 
   constructor() {
@@ -45,4 +63,11 @@ export class RegisterComponent {
 
   }
 }
+
+
+
+  
+
+
+
 
