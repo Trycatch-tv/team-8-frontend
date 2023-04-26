@@ -13,3 +13,7 @@ export interface StudentData{
     id_profesor: null
 	
 }
+export interface ErrorCourses{
+    message:string,
+    isError:boolean
+}
