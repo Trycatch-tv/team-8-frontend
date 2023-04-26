@@ -3,29 +3,30 @@
     <!-- input-------search -->
     <!-- This is an example component -->
     <div class="max-w-2xl mx-auto ">
-        <!-- <form> -->
-            <label for="default-search"
-                class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
-            <div class="relative">
-                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                    <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
-                </div>
-                <input (keyup)="handleSearch()" [(ngModel)]="inputSearchValue" type="search" id="default-search"
-                    class="block outline-none p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Search courses..." required>
-                
+        <label for="default-search"
+            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
+        <div class="relative">
+            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
             </div>
-        <!-- </form> -->
+            <input disabled="{{error.isError}}" (keyup)="handleSearch()" [(ngModel)]="inputSearchValue" type="search"
+                id="default-search"
+                class="block outline-none p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Search courses..." required>
+
+        </div>
         <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
     </div>
     <!-- ------------------------------------------- -->
     <div class="mt-10 px-2 w-full flex flex-wrap gap-4 justify-center">
         <!-- component -->
-        <button *ngIf="!courses" type="button"
+        <h2 class="text-3xl font-bold font-heading mb-10 text-center text-gray-600" *ngIf="!courses && error.isError">⚠️
+            {{error.message}} </h2>
+        <button *ngIf="!courses && !error.isError" type="button"
             class="bg-banner-bg h-max w-max rounded-lg text-white font-bold hover:bg-indigo-300 hover:cursor-not-allowed duration-[500ms,800ms]"
             disabled>
             <div class="h-5 w-5 border-t-transparent border-solid animate-spin rounded-full border-white border-4">
@@ -34,7 +35,8 @@
                 </div>
             </div>
         </button>
-        <h3 class="text-3xl font-bold font-heading mb-10 text-center text-gray-600" *ngIf="courses && courses.length === 0">No hay cursos :(</h3>
+        <h3 class="text-3xl font-bold font-heading mb-10 text-center text-gray-600"
+            *ngIf="courses && courses.length === 0">No hay cursos ☹️</h3>
         <app-card-course [data]="item" [route]="'/student/detail-course/'+ item.id"
             *ngFor="let item of courses"></app-card-course>
     </div>
