@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
+  activeMenu:boolean=false
 
+  handleActiveMenu=()=>this.activeMenu=!this.activeMenu
 }
