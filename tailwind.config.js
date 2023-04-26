@@ -17,6 +17,20 @@ module.exports = {
       width: {
         '300': '300px',
       },
+      keyframes:{
+        openModal:{
+          '0%': { transform: 'translateX(2000px)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        loadItem:{
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        }
+      },
+      animation:{
+        openModal:'openModal ease-in-out .8s',
+        loadItem:'loadItem ease-in-out .8s'
+      }
     },
   },
   plugins: [
