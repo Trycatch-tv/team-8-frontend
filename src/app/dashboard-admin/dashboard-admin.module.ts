@@ -5,18 +5,28 @@ import { TableTeachersComponent } from './table-teachers/table-teachers.componen
 import { TableCoursesComponent } from './table-courses/table-courses.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardAdminRoutingModule } from './dashboard-admin-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ButtonModule } from 'primeng/button';
 
+import { ToastModule } from 'primeng/toast';
+import { AddTeacherComponent } from './add-teacher/add-teacher.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     TableStudentsComponent,
     TableTeachersComponent,
     TableCoursesComponent,
-    HomeComponent
+    HomeComponent,
+    AddTeacherComponent
   ],
   imports: [
     CommonModule,
-    DashboardAdminRoutingModule
+    DashboardAdminRoutingModule,
+    ToastModule,
+    BrowserAnimationsModule,
+    ButtonModule,
+    FormsModule
   ]
 })
 export class DashboardAdminModule { }

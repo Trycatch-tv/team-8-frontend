@@ -6,6 +6,7 @@ import { TableCoursesComponent } from './table-courses/table-courses.component';
 import { TableStudentsComponent } from './table-students/table-students.component';
 import { TableTeachersComponent } from './table-teachers/table-teachers.component';
 import { SidebarAdminComponent } from '../layout/sidebar-admin/sidebar-admin.component';
+import { AddTeacherComponent } from './add-teacher/add-teacher.component';
 
 const routes: Routes = [
 {
@@ -51,6 +52,10 @@ const routes: Routes = [
     },
 
   ]
+},
+{
+  path:'dashboard-admin/content-teachers/add',
+  component:AddTeacherComponent
 }
 ];
 

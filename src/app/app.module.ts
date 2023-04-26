@@ -9,12 +9,17 @@ import { SidebarTeacherComponent } from './layout/sidebar-teacher/sidebar-teache
 import { DashboardAdminModule } from './dashboard-admin/dashboard-admin.module';
 import { DashboardTeacherModule } from './dashboard-teacher/dashboard-teacher.module';
 import { SidebarAdminComponent } from './layout/sidebar-admin/sidebar-admin.component';
+import { RouterModule } from '@angular/router'; // Agregar esta línea de importación
+import { HttpClientModule } from '@angular/common/http';
+
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarTeacherComponent,
     SidebarAdminComponent,
+
 
   ],
   imports: [
@@ -24,7 +29,10 @@ import { SidebarAdminComponent } from './layout/sidebar-admin/sidebar-admin.comp
     ReactiveFormsModule,
     AdminitrationScModule,
     DashboardAdminModule,
-    DashboardTeacherModule
+    DashboardTeacherModule,
+    RouterModule,
+    HttpClientModule,
+    ToastModule,
 
   ],
   providers: [],
