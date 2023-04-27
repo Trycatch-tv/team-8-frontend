@@ -29,15 +29,15 @@ export class AdminService {
 
 
   deleteTeacher(id: number) {
-    return this.http.delete(`http://localhost:8000/delete_teacher/${id}`);
+    return this.http.delete(`http://localhost:8000/delete_teacher/${id}/`);
   }
 
   deleteStudent(id: number) {
-    return this.http.delete(`http://localhost:8000/delete_student/${id}`);
+    return this.http.delete(`http://localhost:8000/delete_student/${id}/`);
   }
 
   deleteCourse(id: number) {
-    return this.http.delete(`http://localhost:8000/delete_course/${id}`);
+    return this.http.delete(`http://localhost:8000/delete_course/${id}/`);
   }
 
   add_teacher(){
