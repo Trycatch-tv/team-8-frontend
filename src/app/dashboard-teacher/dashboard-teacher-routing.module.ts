@@ -6,6 +6,9 @@ import { TableCoursesComponent } from './table-courses/table-courses.component';
 import { TableStudentsComponent } from './table-students/table-students.component';
 import { SidebarTeacherComponent } from '../layout/sidebar-teacher/sidebar-teacher.component';
 import { combineLatest } from 'rxjs';
+import { AddCourseComponent } from './add-course/add-course.component';
+import { UpdateCourseComponent } from './update-course/update-course.component';
+import { DetailCourseComponent } from './detail-course/detail-course.component';
 
 
 const routes: Routes = [
@@ -42,6 +45,18 @@ const routes: Routes = [
     },
 
   ]
+},
+{
+  path:'dashboard-teacher/content-courses/add',
+  component:AddCourseComponent,
+},
+{
+  path:'dashboard-teacher/content-courses/update/:id',
+  component:UpdateCourseComponent,
+},
+{
+  path:'dashboard-teacher/content-courses/detail-course/:id',
+  component:DetailCourseComponent,
 }
 ];
 
