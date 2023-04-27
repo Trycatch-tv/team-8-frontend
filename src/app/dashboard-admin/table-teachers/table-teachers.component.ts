@@ -58,7 +58,5 @@ export class TableTeachersComponent implements OnInit {
   }
 
 
-  send_data(){
-    this.service_admin.add_teacher();
-  }
+
 }

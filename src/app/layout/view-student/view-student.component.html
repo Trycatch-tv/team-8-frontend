@@ -1,4 +1,5 @@
 <!-- component -->
+<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 
 
 <section class=" py-1 bg-blueGray-50">
@@ -9,14 +10,18 @@
         <h6 class="text-blueGray-700 text-xl font-bold">
           Information
         </h6>
-        <button class="bg-green-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" (click)="send_values()" type="button">
-          Add
+
+        <a [routerLink]="['/dashboard-admin/content-students']">
+        <button class="bg-green-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button">
+          Volver Atras
         </button>
+        </a>
       </div>
     </div>
     <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+      <form>
         <h6 class="text-blueGray-500 text-sm mt-3 mb-6 font-bold uppercase">
-          Teacher
+          View Student
         </h6>
         <div class="flex flex-wrap">
           <div class="w-full lg:w-6/12 px-4">
@@ -24,7 +29,7 @@
               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 Nombre
               </label>
-              <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required [(ngModel)]="name">
+              <input name="name" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  readonly value="{{name}}" required [(ngModel)]="name" readonly>
             </div>
           </div>
           <div class="w-full lg:w-6/12 px-4">
@@ -32,7 +37,7 @@
               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 Correo
               </label>
-              <input type="email" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required [(ngModel)]="email">
+              <input type="email" name="email" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"   readonly value="{{email}}" required [(ngModel)]="email">
             </div>
           </div>
           <div class="w-full lg:w-6/12 px-4">
@@ -40,17 +45,18 @@
               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 Telefono
               </label>
-              <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required [(ngModel)]="phone">
+              <input type="text" name="phone" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  readonly value="{{phone}}" required [(ngModel)]="phone">
             </div>
           </div>
           <div class="w-full lg:w-6/12 px-4">
             <div class="relative w-full mb-3">
               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                Area de especializacion
+                Ciudad
               </label>
-              <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required [(ngModel)]="area_especializacion">
+              <input name="country" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  readonly value="{{ciudad}}" required [(ngModel)]="ciudad">
             </div>
           </div>
+
         </div>
 
         <hr class="mt-6 border-b-1 border-blueGray-300">
@@ -64,7 +70,7 @@
               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 Password
               </label>
-              <input type="password" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required [(ngModel)]="password">
+              <input type="password" name="password" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  readonly value="{{password}}" required [(ngModel)]="password">
             </div>
           </div>
           <div class="w-full lg:w-12/12 px-4">
@@ -72,7 +78,7 @@
               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 Password confirmation
               </label>
-              <input type="password" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required [(ngModel)]="password_confirmation">
+              <input type="password" name="password-repeat" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"   readonly value="{{password}}" required [(ngModel)]="password_confirmation">
             </div>
           </div>
 
@@ -84,26 +90,16 @@
           About Me
         </h6>
         <div class="flex flex-wrap">
-          <div class="w-full lg:w-6/12 px-4">
+          <div class="w-full lg:w-12/12 px-4">
             <div class="relative w-full mb-3">
               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 Estado
               </label>
-              <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required [(ngModel)]="estado">
+              <input name="estado" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" rows="4"   readonly value="{{estado}}" required [(ngModel)]="estado" required>
             </div>
           </div>
-
-          <div class="w-full lg:w-12/12 px-4">
-            <div class="relative w-full mb-3">
-              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                Descripcion
-              </label>
-              <textarea type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" rows="4" required [(ngModel)]="description" required></textarea>
-            </div>
-          </div>
-
-
         </div>
+      </form>
     </div>
   </div>
 

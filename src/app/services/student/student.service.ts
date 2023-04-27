@@ -1,9 +1,17 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient,HttpParams  } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class StudentService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+
+
+  add_student(formdata:any){
+    return this.http.post('http://localhost:8000/add_student/',formdata).subscribe((data:any)=>{
+      console.log(data)
+    })
+  }
 }

@@ -13,12 +13,28 @@ import { RouterModule } from '@angular/router'; // Agregar esta línea de import
 import { HttpClientModule } from '@angular/common/http';
 
 import { ToastModule } from 'primeng/toast';
+import { EditStudentComponent } from './layout/edit-student/edit-student.component';
+import { ViewStudentComponent } from './layout/view-student/view-student.component';
+import { ViewTeacherComponent } from './layout/view-teacher/view-teacher.component';
+import { MessageService } from 'primeng/api';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditTeacherComponent } from './layout/edit-teacher/edit-teacher.component';
+import { EditCourseComponent } from './layout/edit-course/edit-course.component';
+import { ViewCourseComponent } from './layout/view-course/view-course.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarTeacherComponent,
     SidebarAdminComponent,
+    EditStudentComponent,
+    ViewStudentComponent,
+    ViewTeacherComponent,
+    EditTeacherComponent,
+    EditCourseComponent,
+    ViewCourseComponent,
 
 
   ],
@@ -33,9 +49,11 @@ import { ToastModule } from 'primeng/toast';
     RouterModule,
     HttpClientModule,
     ToastModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
 
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
