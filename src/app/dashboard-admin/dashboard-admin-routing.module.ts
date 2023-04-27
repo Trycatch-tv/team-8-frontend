@@ -7,11 +7,13 @@ import { TableStudentsComponent } from './table-students/table-students.componen
 import { TableTeachersComponent } from './table-teachers/table-teachers.component';
 import { SidebarAdminComponent } from '../layout/sidebar-admin/sidebar-admin.component';
 import { AddTeacherComponent } from './add-teacher/add-teacher.component';
+import { AuthGuard } from '../guards/auth/auth.guard';
 
 const routes: Routes = [
 {
   path:'dashboard-admin/home',
   component: HomeComponent,
+  canActivate:[AuthGuard],
   children: [
     {
       path:'',
@@ -23,6 +25,7 @@ const routes: Routes = [
 {
   path:'dashboard-admin/content-students',
   component:TableStudentsComponent,
+  canActivate:[AuthGuard],
   children: [
     {
       path:'',
@@ -34,6 +37,7 @@ const routes: Routes = [
 {
   path:'dashboard-admin/content-courses',
   component:TableCoursesComponent,
+  canActivate:[AuthGuard],
   children: [
     {
       path:'',
@@ -44,6 +48,7 @@ const routes: Routes = [
 },
 {
   path:'dashboard-admin/content-teachers',
+  canActivate:[AuthGuard],
   component:TableTeachersComponent,
   children: [
     {
@@ -55,6 +60,7 @@ const routes: Routes = [
 },
 {
   path:'dashboard-admin/content-teachers/add',
+  canActivate:[AuthGuard],
   component:AddTeacherComponent
 }
 ];
