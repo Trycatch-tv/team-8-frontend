@@ -11,6 +11,7 @@ import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { AddTeacherComponent } from './add-teacher/add-teacher.component';
 import { FormsModule } from '@angular/forms';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,9 @@ import { FormsModule } from '@angular/forms';
     TableCoursesComponent,
     HomeComponent,
     AddTeacherComponent
+  ],
+  providers:[
+    MessageService
   ],
   imports: [
     CommonModule,
