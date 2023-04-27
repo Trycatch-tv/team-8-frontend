@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router'; // Agregar esta línea de import
 import { HttpClientModule } from '@angular/common/http';
 
 import { ToastModule } from 'primeng/toast';
+import { StudentContentModule } from './student-content/student-content.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ToastModule } from 'primeng/toast';
     DashboardTeacherModule,
     RouterModule,
     HttpClientModule,
+    StudentContentModule,
     ToastModule,
 
   ],
