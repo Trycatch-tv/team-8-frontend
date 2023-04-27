@@ -6,11 +6,13 @@ import {LoginComponent} from './login/login.component';
 import { HomeComponent } from './home/home.component';
 
 import { RouterModule } from '@angular/router';
+import { LoginAdminComponent } from './login-admin/login-admin.component';
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    LoginAdminComponent,
 
   ],
   imports: [
