@@ -79,4 +79,10 @@ export class AdminService {
   }
 
 
+  //Login Post Htpp
+
+  login_admin(formdata:any){
+    return this.http.post(`http://localhost:8000/user-login/`, formdata);
+  }
+
 }

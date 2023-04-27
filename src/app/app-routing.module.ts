@@ -9,6 +9,7 @@ import { EditTeacherComponent } from './layout/edit-teacher/edit-teacher.compone
 import { ViewTeacherComponent } from './layout/view-teacher/view-teacher.component';
 import { EditCourseComponent } from './layout/edit-course/edit-course.component';
 import { ViewCourseComponent } from './layout/view-course/view-course.component';
+import { LoginAdminComponent } from './adminitration-sc/login-admin/login-admin.component';
 
 const routes: Routes = [
   {
@@ -31,8 +32,10 @@ const routes: Routes = [
     path:'dashboard-admin/detail_student/:id',
     component:ViewStudentComponent
   },
-
-
+  {
+    path:'login/admin',
+    component:LoginAdminComponent
+  },
   {
     path:'dashboard-admin/edit_teacher/:id',
     component:EditTeacherComponent
