@@ -15,8 +15,7 @@ export class DetailCourseComponent implements OnInit {
   constructor(private route: ActivatedRoute,private studentService: AdminService) { }
   courseDetail!: StudentData | undefined
   courseID!:string
-
-
+  isSuscribed:boolean=false
   id_student:any;
 
  ngOnInit(): void {
@@ -26,13 +25,17 @@ export class DetailCourseComponent implements OnInit {
 
    this.studentService.getlist_courses().subscribe((data:any) => {
     const courses = data as StudentData[]; // convierte los datos a un arreglo de StudentData
-    this.courseDetail = courses.find((course: StudentData) => course.id.toString() === this.courseID.toString());
-  });
+    this.courseDetail = courses.find((course: StudentData) => course.id.toString() === this.courseID.toString()) 
+    const idStudents=courses[0].estudiantes
+    if (idStudents !== null) {
+      if(idStudents[0] === Number(localStorage.getItem('id'))){
+        this.isSuscribed=true
+      }
+    }
+    
+   });
 
-
-
-
- }
+}
 
  send_course(id_curso:any,id_teacher:any){
 

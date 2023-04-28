@@ -1,8 +1,9 @@
 <nav class="bx-border flex z-20 w-full fixed top-0  left-0  bg-blue-400 text-white w-screen">
-  <div class="px-5 mx-2  py-4 flex w-full justify-between items-center">
+  <div class="px-5 mx-2  py-4 flex w-full justify-evenly items-center">
     <a class="text-3xl font-bold font-heading" routerLink="/student">
       <img class="w-32" src="../../../assets/icons/project-2.png" alt="logo">
     </a>
+
     <!-- Nav Links -->
     <!-- Header Icons -->
     <div class="hidden sm:flex flex-1 items-center justify-end space-x-5 items-center">
@@ -11,6 +12,15 @@
         <li><a class="hover:text-gray-200" routerLink="/student/courses">Courses</a></li>
         <li><a class="hover:text-gray-200" routerLink="/student/my-courses">My courses</a></li>
       </ul>
+      <div *ngIf="email"n class="self-center font-semibold ">
+        <button
+        type="button"
+        class="cursor-default text-blue-400 border border-gray-100 bg-gray-200 text-gray-700 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none"
+      >
+      {{email}}
+        
+      </button>
+      </div>
       <!-- Sign In / Register      -->
       <button class="hidden sm:flex items-center hover:text-gray-200" (click)="logout_()">
         <svg class=" " width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
