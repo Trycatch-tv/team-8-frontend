@@ -5,7 +5,6 @@ import { DetailCourseComponent } from './detail-course/detail-course.component';
 import { ContainerCourseComponent } from './container-course/container-course.component';
 import { CardCourseComponent } from './card-course/card-course.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { StorageModule } from '@ngx-pwa/local-storage';
 import { HomepageComponent } from './homepage/homepage.component';
 import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { DetailMyCourseComponent } from './detail-my-course/detail-my-courses.component';
@@ -34,7 +33,6 @@ import { StudentContentRoutingModule } from './student-content-routing.module';
     HttpClientModule,
     FormsModule,
     StudentContentRoutingModule,
-    StorageModule
   ]
 })
 export class StudentContentModule { }

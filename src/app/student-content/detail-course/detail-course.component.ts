@@ -5,7 +5,6 @@ import { Subscription } from 'rxjs';
 import { StudentService } from 'src/app/services/student/student.service';
 import { AdminService } from 'src/app/services/admin/admin.service';
 import { StudentcourseService } from 'src/app/services/relations/studentcourse/studentcourse.service';
-import { LocalStorage } from '@ngx-pwa/local-storage';
 @Component({
   selector: 'app-detail-course',
   templateUrl: './detail-course.component.html',
@@ -13,11 +12,10 @@ import { LocalStorage } from '@ngx-pwa/local-storage';
 })
 export class DetailCourseComponent implements OnInit {
   private routeSub!: Subscription;
-  constructor(private route: ActivatedRoute,private studentService: AdminService, private storage:LocalStorage) { }
+  constructor(private route: ActivatedRoute,private studentService: AdminService) { }
   courseDetail!: StudentData | undefined
   courseID!:string
-
-
+  isSuscribed:boolean=false
   id_student:any;
 
  ngOnInit(): void {
@@ -27,13 +25,17 @@ export class DetailCourseComponent implements OnInit {
 
    this.studentService.getlist_courses().subscribe((data:any) => {
     const courses = data as StudentData[]; // convierte los datos a un arreglo de StudentData
-    this.courseDetail = courses.find((course: StudentData) => course.id.toString() === this.courseID.toString());
-  });
+    this.courseDetail = courses.find((course: StudentData) => course.id.toString() === this.courseID.toString()) 
+    const idStudents=courses[0].estudiantes
+    if (idStudents !== null) {
+      if(idStudents[0] === Number(localStorage.getItem('id'))){
+        this.isSuscribed=true
+      }
+    }
+    
+   });
 
-
-
-
- }
+}
 
  send_course(id_curso:any,id_teacher:any){
 
