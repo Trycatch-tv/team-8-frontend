@@ -3,14 +3,15 @@ import { FormControl, Validators, FormGroup, Form } from '@angular/forms';
 import {StudentService} from '../../services/student/student.service'
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  emailControl: FormControl;
   emailForm: FormGroup;
+  emailControl: FormControl;
   passwordControl:FormControl;
   nameControl:FormControl;
   phoneControl:FormControl;
@@ -47,13 +48,17 @@ export class RegisterComponent {
 
 
   constructor(private studentservice:StudentService, private router:Router,private toast:ToastrService) {
-    this.passwordControl = new FormControl('');
-    this.nameControl = new FormControl('');
-    this.countryControl = new FormControl('');
-    this.estadoControl = new FormControl('');
-    this.phoneControl = new FormControl('');
-    this.RepeatControl = new FormControl('');
+    //campos requeridos
     this.emailControl = new FormControl('', [Validators.required, this.emailValidator]);
+    this.nameControl = new FormControl('',[Validators.required,this.nameValidator]);
+    this.passwordControl = new FormControl('',[Validators.required,this.passwordValidator]);
+    this.RepeatControl = new FormControl('',[Validators.required,this.RepeatPasswordValidator]);
+
+    this.countryControl = new FormControl('',Validators.required);
+    this.estadoControl = new FormControl('',Validators.required);
+    this.phoneControl = new FormControl('',Validators.required);
+    ///////////////////
+
     this.emailForm = new FormGroup({
       email: this.emailControl,
       password: this.passwordControl,
@@ -64,34 +69,58 @@ export class RegisterComponent {
       estado:this.estadoControl
     });
   }
-
-
-  emailValidator(control: FormControl): { [s: string]: boolean } {
-
+  /// validaciones de campos de register/////////
+  repeatPasswordValidate:boolean = true
+  
+  emailValidator(control: FormControl): { [s: string]: boolean,} {
     if(control.value){
       if (control.value.length > 3) {
         if (!control.value.match(/^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/)) {
-          return { invalidEmail: true };
+          return { invalidEmail: true};
         }
+      }else{
+        return {invalidEmail: true}
       }
+    }
+    else return {fieldRequired: true}
+
+    return {};
+  }
+  nameValidator(control: FormControl): { [s: string]: boolean } {
+    if(!control.value){
+      return {invalidName: true };
     }
 
     return {};
   }
+  passwordValidator(control: FormControl): { [s: string]: boolean } {
+    const MAX_CARACTER=3
+    if(control.value){
+     if(control.value.length < MAX_CARACTER ) return {invalidPassword:true}
+    }else return  {fieldRequired:true}
 
+    return {};
+  }
+  RepeatPasswordValidator(control: FormControl): { [s: string]: boolean } {
+   if(!control.value) return {fieldRequired:true}
+   return {};
+  }
 
   passwordsMatch(){
     this.password = this.passwordControl.value
     this.password_repeat =this.RepeatControl.value
-
-    return  this.password.trim().length > 3  && this.password_repeat.trim().length > 3  && this.RepeatControl.value === this.passwordControl.value
+    if(this.RepeatControl.value === this.passwordControl.value){
+      this.repeatPasswordValidate=false
+    }
+    else this.repeatPasswordValidate=true
+    console.log(this.emailForm.invalid)
   }
-
-  handleSubmitFormLogin(event: Event) {
+///////////////////////////////////////////////
+ handleSubmitFormLogin(event: Event) {
     event.preventDefault();
     alert(`${this.nameControl.value} ${this.emailControl.value} ${this.estadoControl.value} ${this.countryControl.value} ${this.phoneControl.value} ${this.passwordControl.value} ${this.RepeatControl.value}`)
+    
     //Se va enviarlos datos para la autenticacion
-
 
     const formdata = new FormData()
     formdata.append("nombre", this.nameControl.value)
@@ -101,12 +130,7 @@ export class RegisterComponent {
     formdata.append("estado", this.estadoControl.value)
     formdata.append("contrasena", this.passwordControl.value)
     formdata.append("rol",this.rol)
-
-
-    console.log(formdata)
-
-
-
+    
     this.studentservice.add_student(formdata).subscribe((data:any)=>{
       console.log(data)
       this.toast.success("Registro Enviado Correctamente")
