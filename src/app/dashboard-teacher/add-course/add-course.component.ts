@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin/admin.service';
 import { TeacherService } from 'src/app/services/teacher/teacher.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { TeacherService } from 'src/app/services/teacher/teacher.service';
 export class AddCourseComponent {
 
 
-  constructor(private teacherService: TeacherService,private route:Router){}
+  constructor(private teacherService: TeacherService,private route:Router,private adminservice:AdminService){}
   nombre:string= ""
   categoria:string= ""
   nivel_curso:string= ""
@@ -38,9 +39,26 @@ export class AddCourseComponent {
 
     }
 
-    this.teacherService.add_course(data).subscribe((data)=>{
+    this.teacherService.add_course(data).subscribe((data_da:any)=>{
       this.route.navigate(['/dashboard-teacher/content-courses'])
+      this.send_teacher_course(data_da.id)
     })
   }
+
+
+   send_teacher_course(id_curso:any){
+
+  const id_teacher = Number(localStorage.getItem('id_teacher'));
+  alert(id_teacher)
+  alert(id_curso)
+  this.adminservice.agregarCursoProfesor(id_curso,id_teacher).subscribe((data:any)=>{
+    console.log(data)
+  },
+  (error)=>{
+    console.log(error)
+  })
+
+
+ }
 
 }

@@ -21,10 +21,11 @@ export class TableStudentsComponent implements OnInit {
   showModal = false;
 
   ngOnInit(): void {
-    this.service_admin.getlist_students().subscribe((data:any) =>{
+    const id_profesor = Number(localStorage.getItem('id_teacher'));
+    this.service_admin.getEstudiantesPorProfesor(id_profesor).subscribe((data:any) =>{
       //this.users = JSON.parse(data);
-      this.datos = data;
-      this.col = Object.keys(data[0]).slice(0,7)
+      this.datos = data["students"]
+      //this.col = Object.keys(data[0]).slice(0,7)
     });
 
   }

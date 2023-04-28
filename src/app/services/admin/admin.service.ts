@@ -107,8 +107,31 @@ export class AdminService {
     return this.http.post(url, data);
   }
 
+
+  agregarCursoProfesor(idCurso: number, idProfesor: number) {
+    const url = 'http://localhost:8000/agregar_curso_profesor/';
+    const data = {
+      cursos: idCurso,
+      profesores: idProfesor,
+    };
+
+
+    console.log(data)
+    return this.http.post(url, data);
+  }
+
   getCursosPorEstudiante(estudianteId: number): Observable<any> {
     //const url = `http:localhost:8000/estudiantes/${estudianteId}/cursos/`;
     return this.http.get(`http://localhost:8000/api/estudiantes/${estudianteId}/cursos/`);
+  }
+
+  getCursosPorProfesor(profesorId: number): Observable<any> {
+    //const url = `http:localhost:8000/estudiantes/${profesorId}/cursos/`;
+    return this.http.get(`http://localhost:8000/api/profesor/${profesorId}/cursos/`);
+  }
+
+  getEstudiantesPorProfesor(profesorId: number): Observable<any> {
+    //const url = `http:localhost:8000/estudiantes/${profesorId}/cursos/`;
+    return this.http.get(`http://localhost:8000/api/profesores/${profesorId}/estudiantes/`);
   }
 }
