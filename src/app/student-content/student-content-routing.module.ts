@@ -6,12 +6,15 @@ import { HomeComponent } from "./home/home.component";
 import { HomepageComponent } from "./homepage/homepage.component";
 import { MyCoursesComponent } from "./my-courses/my-courses.component";
 import { NgModule } from "@angular/core";
+import { AuthGuard } from "../guards/auth_student/auth.guard";
+
 
 
 const routes: Routes = [
     {
       path: 'student',
       component: HomeComponent,
+      canActivate:[AuthGuard],
       children: [
         {
           path: 'courses',

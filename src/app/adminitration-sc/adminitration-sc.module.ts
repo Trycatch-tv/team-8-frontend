@@ -7,12 +7,15 @@ import { HomeComponent } from './home/home.component';
 
 import { RouterModule } from '@angular/router';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
+import { LoginTeacherComponent } from './login-teacher/login-teacher.component';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
     HomeComponent,
     LoginAdminComponent,
+    LoginTeacherComponent,
 
   ],
   imports: [
@@ -20,6 +23,8 @@ import { LoginAdminComponent } from './login-admin/login-admin.component';
     ReactiveFormsModule,
     FormsModule,
     RouterModule,
+    ToastrModule.forRoot(),
+
   ]
 })
 export class AdminitrationScModule { }

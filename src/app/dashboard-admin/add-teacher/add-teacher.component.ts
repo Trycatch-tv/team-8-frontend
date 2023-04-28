@@ -23,6 +23,7 @@ export class AddTeacherComponent implements OnInit {
   password_confirmation='';
   description:string='';
   estado:string='';
+  rol:string='teacher'
 
   ngOnInit(): void {
   }
@@ -49,6 +50,7 @@ export class AddTeacherComponent implements OnInit {
     formData.append("telefono",this.phone);
     formData.append("estado",this.estado);
     formData.append("contrasena",this.password);
+    formData.append("rol",this.rol)
     return this.adminservice.add_teacher(formData).subscribe((data:any)=>{
         console.log(data)
          this.showSuccess()

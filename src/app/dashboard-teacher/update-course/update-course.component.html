@@ -11,10 +11,16 @@
             </div>
             <div class="flex-auto px-4 lg:px-10 py-10 pt-0 ">
                 <form class="relative" (submit)="handleSubmitUpdateCourse($event)">
+                    <a [routerLink]="['/dashboard-teacher/content-courses']" routerLinkActive="router-link-active"
+                        class="absolute right-40 bg-green-500 ml-4  text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150">
+                        Cancel
+                </a>
+
                     <button
-                        class="absolute right-0 bg-green-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150">
-                        Add
+                        class="absolute right-0 ml-8 bg-green-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150">
+                        Edit
                     </button>
+
                     <h6 class="text-blueGray-500 text-sm mt-3 mb-6 font-bold uppercase">
                         Course
                     </h6>
@@ -72,6 +78,18 @@
                                     required>
                             </div>
                         </div>
+
+                        <div class="w-full lg:w-6/12 px-4">
+                          <div class="relative w-full mb-3">
+                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                                  htmlfor="grid-password">
+                                  Valoraciones
+                              </label>
+                              <input name="code_course" [(ngModel)]="valoraciones" type="text"
+                                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                  required>
+                          </div>
+                      </div>
                         <div class="w-full lg:w-6/12 px-4">
                             <div class="relative w-full mb-3">
                                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"

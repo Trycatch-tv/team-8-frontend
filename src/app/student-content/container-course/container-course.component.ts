@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from 'src/app/services/student/student.service';
 import { ErrorCourses, StudentData } from '../type';
 import { catchError, throwError } from 'rxjs';
+import { AdminService } from 'src/app/services/admin/admin.service';
 @Component({
   selector: 'app-container-course',
   templateUrl: './container-course.component.html',
@@ -9,7 +9,7 @@ import { catchError, throwError } from 'rxjs';
 })
 export class ContainerCourseComponent implements OnInit {
   inputSearchValue: string = ''
-  constructor(private studentService: StudentService) { }
+  constructor(private studentService: AdminService) { }
   coursesAll!: Array<StudentData>
   courses!: Array<StudentData>
   error: ErrorCourses={
@@ -19,19 +19,14 @@ export class ContainerCourseComponent implements OnInit {
 
 
   ngOnInit() {
-    this.studentService.getAllCourses().pipe(
-      catchError((error: any) => {
-        this.error = {
-          message:'Ocurred an error: ' + error.name,
-          isError:true
-        }
-        return throwError('Ocurred an error')
-      })
-    ).subscribe((data: any) => {
+    this.studentService.getlist_courses().subscribe((data:any)=>{
       this.courses = data
-      this.coursesAll = data
-    });
-
+      this.coursesAll= data;
+    },
+    (error)=>{
+      console.log(error)
+      this.error = {message:'not loading the data', isError:true};
+    })
   }
   handleSearch() {
     if (!this.inputSearchValue) {

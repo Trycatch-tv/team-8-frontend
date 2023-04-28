@@ -10,6 +10,7 @@ import { AddCourseComponent } from './add-course/add-course.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateCourseComponent } from './update-course/update-course.component';
 import { DetailCourseComponent } from './detail-course/detail-course.component';
+import { ViewStudentComponent } from './view-student/view-student.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DetailCourseComponent } from './detail-course/detail-course.component';
     TableCoursesComponent,
     AddCourseComponent,
     UpdateCourseComponent,
-    DetailCourseComponent
+    DetailCourseComponent,
+    ViewStudentComponent
   ],
   imports: [
     CommonModule,

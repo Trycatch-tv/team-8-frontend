@@ -8,19 +8,6 @@ export class AuthService {
   constructor() { }
 
 
-  /*
-  static isAuthenticated = false;
-
-
-  Auth() {
-     isAuthenticated=true;
-  }
-
-  logout() {
-     this.isAuthenticated=false;
-  }*/
-
-
   static isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
 
   static login() {

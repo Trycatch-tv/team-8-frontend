@@ -3,6 +3,7 @@ import { StudentData } from '../type';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { StudentService } from 'src/app/services/student/student.service';
+import { AdminService } from 'src/app/services/admin/admin.service';
 
 @Component({
   selector: 'app-detail-course',
@@ -11,7 +12,7 @@ import { StudentService } from 'src/app/services/student/student.service';
 })
 export class DetailCourseComponent implements OnInit {
   private routeSub!: Subscription;
-  constructor(private route: ActivatedRoute,private studentService: StudentService) { }
+  constructor(private route: ActivatedRoute,private studentService: AdminService) { }
   courseDetail!: StudentData | undefined
   courseID!:string
 
@@ -20,10 +21,17 @@ export class DetailCourseComponent implements OnInit {
     this.courseID=params['id']
    })
 
-   this.studentService.getAllCourses().subscribe((data:any) => {
+   this.studentService.getlist_courses().subscribe((data:any) => {
     const courses = data as StudentData[]; // convierte los datos a un arreglo de StudentData
     this.courseDetail = courses.find((course: StudentData) => course.id.toString() === this.courseID.toString());
   });
  }
- 
+
+
+
+
+ subscripcion_course(){
+
+ }
+
 }

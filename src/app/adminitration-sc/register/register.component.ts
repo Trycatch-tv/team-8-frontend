@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators, FormGroup, Form } from '@angular/forms';
 import {StudentService} from '../../services/student/student.service'
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -25,6 +27,7 @@ export class RegisterComponent {
   phone:string='';
   estado:string='';
   password_repeat:string='';
+  rol='student';
 
   country = [
     { label: 'Colombia', value: 'Colombia' },
@@ -43,7 +46,7 @@ export class RegisterComponent {
 
 
 
-  constructor(private studentservice:StudentService) {
+  constructor(private studentservice:StudentService, private router:Router,private toast:ToastrService) {
     this.passwordControl = new FormControl('');
     this.nameControl = new FormControl('');
     this.countryControl = new FormControl('');
@@ -65,9 +68,11 @@ export class RegisterComponent {
 
   emailValidator(control: FormControl): { [s: string]: boolean } {
 
-    if (control.value.length > 3) {
-      if (!control.value.match(/^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/)) {
-        return { invalidEmail: true };
+    if(control.value){
+      if (control.value.length > 3) {
+        if (!control.value.match(/^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/)) {
+          return { invalidEmail: true };
+        }
       }
     }
 
@@ -79,44 +84,15 @@ export class RegisterComponent {
     this.password = this.passwordControl.value
     this.password_repeat =this.RepeatControl.value
 
-
-
-    console.log(this.password, "-------ejejeje ", this.password_repeat)
-
-
-
-
     return  this.password.trim().length > 3  && this.password_repeat.trim().length > 3  && this.RepeatControl.value === this.passwordControl.value
   }
-
-/*
-  passwordValidator(control: FormControl): { [s: string]: boolean } {
-
-    if (control.value.length > 3) {
-      if (!control.value.match(/^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/) && this.RepeatControl !== this.passwordControl) {
-        return { invalidEmail: true };
-      }
-    }
-
-    return {};
-  }
-*/
-
 
   handleSubmitFormLogin(event: Event) {
     event.preventDefault();
     alert(`${this.nameControl.value} ${this.emailControl.value} ${this.estadoControl.value} ${this.countryControl.value} ${this.phoneControl.value} ${this.passwordControl.value} ${this.RepeatControl.value}`)
     //Se va enviarlos datos para la autenticacion
 
-/*
-{
-  "nombre":"Treft",
-  "correo":"onetreft@gmail.com",
-  "ciudad":"Colombia",
-  "telefono":3153425549,
-  "estado":"activo",
-  "contrasena":"dentreaca1"
-}*/
+
     const formdata = new FormData()
     formdata.append("nombre", this.nameControl.value)
     formdata.append("correo", this.emailControl.value)
@@ -124,12 +100,23 @@ export class RegisterComponent {
     formdata.append("telefono", this.phoneControl.value)
     formdata.append("estado", this.estadoControl.value)
     formdata.append("contrasena", this.passwordControl.value)
+    formdata.append("rol",this.rol)
 
 
     console.log(formdata)
 
 
-    this.studentservice.add_student(formdata);
+
+    this.studentservice.add_student(formdata).subscribe((data:any)=>{
+      console.log(data)
+      this.toast.success("Registro Enviado Correctamente")
+      this.router.navigate(['/login'])
+
+    },
+    (error)=>{
+        this.toast.error("El registro no se completo correctamente")
+        console.log(error)
+    })
 
 
     this.passwordControl.reset();

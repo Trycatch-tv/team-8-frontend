@@ -85,4 +85,12 @@ export class AdminService {
     return this.http.post(`http://localhost:8000/user-login/`, formdata);
   }
 
+  login_teacher(formdata:any){
+    return this.http.post(`http://localhost:8000/teacher-login/`, formdata);
+  }
+
+  login_student(formdata:any){
+    return this.http.post(`http://localhost:8000/student-login/`, formdata);
+  }
+
 }

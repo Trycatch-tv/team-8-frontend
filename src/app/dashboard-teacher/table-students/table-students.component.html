@@ -18,29 +18,27 @@
           <div class="flex space-x-2 text-gray-400 text-sm my-3">
             <!-- svg  -->
             <img src="../../../assets/imgs/dashboard-admin/students/juego-de-rol (1).png" class="h-5 w-5" alt="">
-    
+
             <p>{{data.correo}}</p>
           </div>
           <div class="border-t-2"></div>
-    
+
           <div class="flex justify-between">
             <div class="my-2">
               <p class="font-semibold text-base mb-2">Actions initals</p>
               <div class="flex item-center justify-center">
                 <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+
+                  <a [routerLink]="['/dashboard-teacher/detail-student',data.id]" routerLinkActive="router-link-active" >
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
+                  </a>
                 </div>
-                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                  </svg>
-                </div>
+
                 <button (click)="showConfirm1(data.id)">
                   <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -59,10 +57,10 @@
             </div>
           </div>
         </div>
-    
-    
-    
-    
+
+
+
+
         <!--Delete confirm -->
         <p-toast position="bottom-center" key="confirm" (onClose)="onReject1()" [baseZIndex]="5000"
           class="bg-white rounded-lg  p-6">
@@ -85,10 +83,10 @@
             </div>
           </ng-template>
         </p-toast>
-    
-    
-    
-    
+
+
+
+
       </div>
     </div>
   </div>

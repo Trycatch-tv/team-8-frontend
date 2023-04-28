@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { AdminService } from 'src/app/services/admin/admin.service';
+import { AuthService } from 'src/app/services/auth/auth_student/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +21,7 @@ export class LoginComponent {
   password:string='';
 
 
-  constructor() {
+constructor(private adminservice:AdminService,private router:Router, private toast:ToastrService) {
     this.passwordControl = new FormControl('');
     this.emailControl = new FormControl('', [Validators.required, this.emailValidator]);
     this.emailForm = new FormGroup({
@@ -40,7 +44,21 @@ export class LoginComponent {
 
   handleSubmitFormLogin(event: Event) {
     event.preventDefault();
+
+    const formdata = new FormData()
+    formdata.append("correo",this.emailControl.value)
+    console.log(this.emailControl.value)
+    formdata.append("contrasena", this.passwordControl.value)
     //Se va enviarlos datos para la autenticacion
+    this.adminservice.login_student(formdata).subscribe((data:any)=>{
+      AuthService.login();
+      console.log(data)
+      this.router.navigate(['/student']);
+    },
+    (error)=>{
+      this.toast.error("Usuario o contraseña no valido");
+      console.log("error",error)
+    })
 
     this.passwordControl.reset();
     this.emailControl.reset();

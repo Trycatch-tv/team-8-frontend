@@ -10,8 +10,9 @@ export interface StudentData{
     estado: string
     valoraciones: number
     id_estudiante: null
+    description:string;
     id_profesor: null
-	
+
 }
 export interface ErrorCourses{
     message:string,

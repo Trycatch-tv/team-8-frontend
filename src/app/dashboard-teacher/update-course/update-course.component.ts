@@ -18,7 +18,7 @@ export class UpdateCourseComponent  {
   codigo_curso:string= ""
   estado:string= ""
   description:string= ""
-  valoraciones:number= 1
+  valoraciones:string='';
   id_estudiante:any= null
   id_profesor:any= null
 
@@ -38,7 +38,7 @@ export class UpdateCourseComponent  {
       id_estudiante:this.id_estudiante,
       id_profesor:this.id_profesor
     }
-    
+
 
     this.teacherService.update_course(data,this.courseID).subscribe((data)=>{
       console.log('Se edito correctamente ' )
@@ -58,6 +58,7 @@ export class UpdateCourseComponent  {
       this.codigo_curso=data.codigo_curso
       this.estado=data.estado
       this.description=data.description
+      this.valoraciones = data.valoraciones
     })
   }
 }

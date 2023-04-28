@@ -10,8 +10,6 @@ export class StudentService {
 
 
   add_student(formdata:any){
-    return this.http.post('http://localhost:8000/add_student/',formdata).subscribe((data:any)=>{
-      console.log(data)
-    })
+    return this.http.post('http://localhost:8000/add_student/',formdata);
   }
 }
