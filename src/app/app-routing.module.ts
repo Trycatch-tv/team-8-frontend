@@ -44,7 +44,6 @@ const routes: Routes = [
   {
     path:'login/admin',
     component:LoginAdminComponent,
-    canActivate:[AuthGuard],
 
   },
   {
