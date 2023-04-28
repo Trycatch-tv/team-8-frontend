@@ -21,6 +21,7 @@
     "@fortawesome/angular-fontawesome": "^0.12.1",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@ngx-pwa/local-storage": "^15.0.0",
     "ngx-toastr": "^16.1.1",
     "primeicons": "^6.0.1",
     "primeng": "^15.4.1",

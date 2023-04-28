@@ -1,8 +1,6 @@
 <div class="mx-auto mt-20 w-full   px-10 py-16 min-h-screen ">
     <h3 class="text-3xl font-bold font-heading mb-10 text-center text-gray-600">My courses</h3>
     <div class="mt-10 px-20 w-full flex flex-wrap gap-4 justify-center">
-        <app-card-course [route]="'/student/detail-my-course/23'"></app-card-course>
-       
+        <app-card-course  *ngFor="let data of datos"  [route]="'/student/detail-my-course/23'" [data]="data"></app-card-course>
     </div>
-
 </div>

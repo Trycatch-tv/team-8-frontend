@@ -72,7 +72,8 @@ const routes: Routes = [
 },
 {
   path:'dashboard-teacher/detail-student/:id',
-  component:ViewStudentComponent
+  component:ViewStudentComponent,
+  canActivate:[AuthGuard],
 }
 ];
 

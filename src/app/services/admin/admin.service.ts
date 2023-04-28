@@ -93,4 +93,22 @@ export class AdminService {
     return this.http.post(`http://localhost:8000/student-login/`, formdata);
   }
 
+
+  agregarCursoProfesorAEstudiante(idCurso: number, idProfesor: number, idEstudiante: number) {
+    const url = 'http://localhost:8000/agregar_curso_profesor_a_estudiante/';
+    const data = {
+      cursos: idCurso,
+      profesores: idProfesor,
+      studiantes: idEstudiante
+    };
+
+
+    console.log(data)
+    return this.http.post(url, data);
+  }
+
+  getCursosPorEstudiante(estudianteId: number): Observable<any> {
+    //const url = `http:localhost:8000/estudiantes/${estudianteId}/cursos/`;
+    return this.http.get(`http://localhost:8000/api/estudiantes/${estudianteId}/cursos/`);
+  }
 }

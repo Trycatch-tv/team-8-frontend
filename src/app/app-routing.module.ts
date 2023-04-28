@@ -11,6 +11,7 @@ import { EditCourseComponent } from './layout/edit-course/edit-course.component'
 import { ViewCourseComponent } from './layout/view-course/view-course.component';
 import { LoginAdminComponent } from './adminitration-sc/login-admin/login-admin.component';
 import { LoginTeacherComponent } from './adminitration-sc/login-teacher/login-teacher.component';
+import { AuthGuard } from './guards/auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -31,34 +32,46 @@ const routes: Routes = [
   },
   {
     path:'dashboard-admin/edit_student/:id',
-    component:EditStudentComponent
-
+    component:EditStudentComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:'dashboard-admin/detail_student/:id',
-    component:ViewStudentComponent
+    component:ViewStudentComponent,
+    canActivate:[AuthGuard],
+
   },
   {
     path:'login/admin',
-    component:LoginAdminComponent
+    component:LoginAdminComponent,
+    canActivate:[AuthGuard],
+
   },
   {
     path:'dashboard-admin/edit_teacher/:id',
-    component:EditTeacherComponent
+    component:EditTeacherComponent,
+    canActivate:[AuthGuard],
+
   },
   {
     path:'dashboard-admin/detail_teacher/:id',
-    component:ViewTeacherComponent
+    component:ViewTeacherComponent,
+    canActivate:[AuthGuard],
+
   },
 
 
   {
     path:'dashboard-admin/edit_course/:id',
-    component:EditCourseComponent
+    component:EditCourseComponent,
+    canActivate:[AuthGuard],
+
   },
   {
     path:'dashboard-admin/detail_course/:id',
-    component:ViewCourseComponent
+    component:ViewCourseComponent,
+    canActivate:[AuthGuard],
+
   }
 
 ];

@@ -101,6 +101,8 @@ export class RegisterComponent {
     formdata.append("estado", this.estadoControl.value)
     formdata.append("contrasena", this.passwordControl.value)
     formdata.append("rol",this.rol)
+    //formdata.append("cursos","[]")
+    //formdata.append("profesores","[]")
 
 
     console.log(formdata)

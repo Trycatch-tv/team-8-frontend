@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AdminService } from 'src/app/services/admin/admin.service';
 import { AuthService } from 'src/app/services/auth/auth_student/auth.service';
+import { StudentcourseService } from 'src/app/services/relations/studentcourse/studentcourse.service';
 
 @Component({
   selector: 'app-login',
@@ -53,6 +54,8 @@ constructor(private adminservice:AdminService,private router:Router, private toa
     this.adminservice.login_student(formdata).subscribe((data:any)=>{
       AuthService.login();
       console.log(data)
+      StudentcourseService.data_login(data.id,data.nombre,data.correo)
+      this.toast.success("Inicio de seccion correctamente")
       this.router.navigate(['/student']);
     },
     (error)=>{

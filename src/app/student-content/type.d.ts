@@ -9,9 +9,9 @@ export interface StudentData{
     created_at:string
     estado: string
     valoraciones: number
-    id_estudiante: null
+    estudiantes: null
     description:string;
-    id_profesor: null
+    profesores: null
 
 }
 export interface ErrorCourses{
