@@ -41,7 +41,7 @@ export class DetailCourseComponent implements OnInit {
       this.estado=data.estado
       this.description=data.description
 
-      console.log(data)
+     
     })
   }
 }

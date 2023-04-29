@@ -22,7 +22,7 @@ import { StudentContentRoutingModule } from './student-content-routing.module';
     NavBarComponent,
     HomepageComponent,
     MyCoursesComponent,
-    DetailMyCourseComponent,
+    DetailMyCourseComponent
 
   ],
   providers: [

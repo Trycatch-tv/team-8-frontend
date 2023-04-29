@@ -10,7 +10,7 @@ import { MessageService } from 'primeng/api';
 export class TableCoursesComponent implements OnInit {
 
   col:any;
-  datos:any;
+  datos!:any;
   itemId:any;
 
   constructor(private service_admin:AdminService,private messageService: MessageService){}

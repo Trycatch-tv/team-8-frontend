@@ -1,15 +1,13 @@
 <!-- component -->
 <div class="animate-loadItem min-h-screen flex items-center bg-no-repeat bg-center bg-cover "
-	style="background-image: url('https://source.unsplash.com/random?ux')">
+	style="background-image: url('../../../assets/imgs/home_student.png')">
 	<section class="bg-cover bg-center py-32 w-full flex ">
-		<div class="container mx-auto text-left text-white">
+		<div class="container mx-auto text-left text-white border-box">
 			<div class="flex  items-center ">
 				<div class="flex flex-col items-center sm:w-1/2 sm:items-start">
-					<h1 *ngIf="name" class="text-5xl font-medium mb-6 text-center sm:text-start">WELCOME {{name.toUpperCase()}}
+					<h1 *ngIf="name" class="sm:text-5xl text-2xl font-medium mb-6 text-center sm:text-start">¡Bienvenido <span class="rounded p-2 text-blue-400">{{name.charAt(0).toUpperCase()+ name.substring(1)}}</span>!
 					</h1>
-					<p  class="text-xl mb-12 text-center px-4 sm:text-start">Lorem ipsum dolor sit amet, consectetur
-						adipiscing elit. Nam viverra
-						euismod odio, gravida pellentesque urna varius vitae.</p>
+					<p  class="text-xl sm:text-xl mb-12 text-center px-4 sm:text-start">Aprende a tu propio ritmo, en cualquier momento y en cualquier lugar</p>
 					<a routerLink="/student/courses"
 						class="bg-blue-400  text-white py-4 px-12 rounded-full hover:bg-indigo-600 text-center">Go
 						to courses</a>

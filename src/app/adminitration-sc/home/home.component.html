@@ -1,97 +1,109 @@
 <!-- component -->
-<section class="relative  bg-blueGray-50">
-<div class="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
-        <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
+<section class="relative min-h-screen bg-blueGray-50 animate-loadItem pb-10">
+  <div class="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
+    <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
             background-image: url('../../../assets/imgs/home_bg.jpg');
           ">
-          <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-black"></span>
-        </div>
-        <div class="container relative mx-auto">
-          <div class="items-center flex flex-wrap">
-            <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-              <div class="pr-12">
-                <h1 class="text-white font-semibold text-5xl">
-                  Bienvenidos A Administration-sc
-                </h1>
-                <p class="mt-4 text-lg text-white">
-                  ⛳Pojecto desarrollado en una organización llamada TryCatch , Somos El Team Numero 8 Fase 1 📚
-                </p>
-              </div>
-            </div>
+      <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-black"></span>
+    </div>
+    <div class="w-full relative mx-auto">
+      <div class="items-center justify-center flex flex-wrap">
+        <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+          <div class=" flex items-center flex-col">
+            <h1 class="w-full text-white font-semibold text-5xl">
+              ¡Bienvenidos a Administration School¡ 
+            </h1>
+            <p class="mt-4 text-xl text-white">
+              ⛳Fase 1 del proyecto desarrollado por el equipo 8 de TryCatch. 📚
+            </p>
           </div>
-        </div>
-        <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px" style="transform: translateZ(0px)">
-          <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-            <polygon class="text-blueGray-200 fill-current" points="2560 0 2560 100 0 100"></polygon>
-          </svg>
         </div>
       </div>
-      <section class="pb-10 bg-blueGray-200 -mt-24">
-        <div class="container mx-auto px-4">
-          <div class="flex flex-wrap">
-            <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
-              <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
-                <div class="px-4 py-5 flex-auto">
-                  <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
-                    <i class="fas fa-award"></i>
-                  </div>
-                  <a [routerLink]="['/login']">
-                  <h6 class="text-xl font-semibold">♾️Apartado Login🏗️</h6></a>
-                  <p class="mt-2 mb-4 text-blueGray-500">
-                    Donde los estudiantes pueden logearse
-                    para sus  diferentes activades
-                  </p>
-                </div>
+    </div>
+    <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px"
+      style="transform: translateZ(0px)">
+      <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+        <polygon class="text-blueGray-200 fill-current" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </div>
+  <section class="pb-10 bg-blueGray-200 -mt-24">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap">
+        <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
+          <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+            <div class="px-4 py-5 flex-auto">
+              <div
+                class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
+                <i class="fas fa-award"></i>
               </div>
-            </div>
-            <div class="w-full md:w-4/12 px-4 text-center">
-              <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
-                <div class="px-4 py-5 flex-auto">
-                  <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400 bg-blue-500">
-                    <i class="fas fa-retweet"></i>
-                  </div>
-                  <a [routerLink]="['/register']">
-                  <h6 class="text-xl font-semibold">⛳Apartado Registro⚒️</h6></a>
-                  <p class="mt-2 mb-4 text-blueGray-500">
-                    Donde los estudiantes se registran para cumplir
-                    explorar cursos
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="pt-6 w-full md:w-4/12 px-4 text-center">
-              <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
-                <div class="px-4 py-5 flex-auto">
-                  <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
-                    <i class="fas fa-fingerprint"></i>
-                  </div>
-                  <a [routerLink]="['/login/admin']">
-                  <h6 class="text-xl font-semibold">📝Apartado Admin🧪</h6></a>
-                  <p class="mt-2 mb-4 text-blueGray-500">
-                    Donde un usuario admin se logea para el manejo
-                    de los estudiantes y profesores e cursos
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-0 w-full md:w-4/12 px-4 text-center flex justify-center items-center mx-auto">
-              <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
-                <div class="px-4 py-5 flex-auto">
-                  <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-yellow-400">
-                    <i class="fas fa-fingerprint"></i>
-                  </div>
-                  <a [routerLink]="['/login/teacher']">
-                  <h6 class="text-xl font-semibold">📝Apartado Teacher⛳</h6></a>
-                  <p class="mt-2 mb-4 text-blueGray-500">
-                    Donde un usuario teacher se logea para el manejo
-                    de los estudiantes y cursos
-                  </p>
-                </div>
-              </div>
+              <a [routerLink]="['/login']">
+                <h6 class="text-xl font-semibold">♾️Inicio de sesión estudiantes🏗️</h6>
+              </a>
+              <p class="mt-2 mb-4 text-blueGray-500">
+                Portal de estudiantes. Inicia sesión para acceder a tus actividades y recursos de aprendizaje.
+              </p>
             </div>
           </div>
-
         </div>
-</section>
+        <div class="w-full md:w-4/12 px-4 text-center">
+          <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+            <div class="px-4 py-5 flex-auto">
+              <div
+                class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400 bg-blue-500">
+                <i class="fas fa-retweet"></i>
+              </div>
+              <a [routerLink]="['/register']">
+                <h6 class="text-xl font-semibold">⛳Registro de estudiantes⚒️</h6>
+              </a>
+              <p class="mt-2 mb-4 text-blueGray-500">
+                Regístrate para acceder a nuestros cursos y recursos de aprendizaje. ¡Únete a nuestra comunidad educativa!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-6 w-full md:w-4/12 px-4 text-center">
+          <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+            <div class="px-4 py-5 flex-auto">
+              <div
+                class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
+                <i class="fas fa-fingerprint"></i>
+              </div>
+              <a [routerLink]="['/login/admin']">
+                <h6 class="text-xl font-semibold">📝Inicio de sesión administrador🧪</h6>
+              </a>
+              <p class="mt-2 mb-4 text-blueGray-500">
+                Inicia sesión en nuestro panel de administración para gestionar estudiantes, profesores y cursos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-0 w-full md:w-4/12 px-4 text-center flex justify-center items-center mx-auto">
+          <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+            <div class="px-4 py-5 flex-auto">
+              <div
+                class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-yellow-400">
+                <i class="fas fa-fingerprint"></i>
+              </div>
+              <a [routerLink]="['/login/teacher']">
+                <h6 class="text-xl font-semibold">📝Inicio de sesión profesor⛳</h6>
+              </a>
+              <p class="mt-2 mb-4 text-blueGray-500">
+                Inicia sesión en nuestro panel de profesores para gestionar tus estudiantes y cursos. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <footer class="absolute bottom-0 bg-gray-900 text-gray-200 w-full h-20 flex justify-center p"> 
+    <div class="container mx-auto flex items-center justify-center gap-2 flex-col">
+      <p class="text-sm">Organización Trycatch</p>
+      <p class="text-sm">Derechos  Reservados  © 2023 Team-8 </p>
+    </div>
+  </footer>
 </section>

@@ -1,6 +1,6 @@
-<div class="mx-auto  h-screen grid sm:grid-cols-2 ">
+<div class="mx-auto  h-screen grid lg:grid-cols-2 animate-loadItem">
     <div
-        class="relative sm:bg-gradient-to-r bg-gradient-to-b from-banner-bg  via-#F3F4F6-600 to-banner-gray-bg h-screen h-screen flex flex-col justify-center items-center">
+        class="hidden relative sm:bg-gradient-to-r bg-gradient-to-b from-banner-bg  via-#F3F4F6-600 to-banner-gray-bg h-screen h-screen lg:flex flex-col justify-center items-center">
        
         <div class="  p-8 rounded-full overflow-hidden">
             <img src="../../../assets/icons/login_icon.png" class="w-300 h-300 object-cover w-full h-full">
@@ -29,7 +29,7 @@
                                         type="email"
                                         class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
                                         placeholder="Email address" />
-                                        <div *ngIf="emailControl.hasError('invalidEmail')" class="absolute text-red-400 font-bold -bottom-44  text-sm mt-5">Direccion de correo es invalido</div>
+                                        <div *ngIf="emailControl.hasError('invalidEmail')" class="absolute text-red-400 font-bold -bottom-48  text-sm mt-5">Direccion de correo es invalido</div>
 
                                         <label for="email"
                                             class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base  peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:text-gray-600 ">Email
@@ -49,6 +49,7 @@
                                 </form>
                             </div>
                         </div>
+                        <p class="text-center">Are you not account? <a class="text-blue-500" routerLink="/register">Register</a></p>
                     </div>
                 </div>
             </div>

@@ -49,8 +49,6 @@ export class AddCourseComponent {
    send_teacher_course(id_curso:any){
 
   const id_teacher = Number(localStorage.getItem('id_teacher'));
-  alert(id_teacher)
-  alert(id_curso)
   this.adminservice.agregarCursoProfesor(id_curso,id_teacher).subscribe((data:any)=>{
     console.log(data)
   },

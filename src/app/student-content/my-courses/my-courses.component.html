@@ -1,6 +1,20 @@
 <div class="mx-auto mt-20 w-full   px-10 py-16 min-h-screen ">
     <h3 class="text-3xl font-bold font-heading mb-10 text-center text-gray-600">My courses</h3>
     <div class="mt-10 px-20 w-full flex flex-wrap gap-4 justify-center">
-        <app-card-course  *ngFor="let data of datos"  [route]="'/student/detail-my-course/'+data.id" [data]="data"></app-card-course>
+        <h2 class="text-3xl font-bold font-heading mb-10 text-center text-gray-600" *ngIf="!datos && error.isError">⚠️
+            {{error.message}} </h2>
+        <h3 class="text-3xl font-bold font-heading mb-10 text-center text-gray-600" *ngIf="datos && datos.length === 0">
+            No hay cursos.</h3>
+        <button *ngIf="!datos && !error.isError" type="button"
+            class="bg-banner-bg h-max w-max rounded-lg text-white font-bold hover:bg-indigo-300 hover:cursor-not-allowed duration-[500ms,800ms]"
+            disabled>
+            <div class="h-5 w-5 border-t-transparent border-solid animate-spin rounded-full border-white border-4">
+            </div>
+            <div class="ml-2"> Processing... <div>
+                </div>
+            </div>
+        </button>
+        <app-card-course *ngFor="let data of datos" [route]="'/student/detail-my-course/'+data.id"
+            [data]="data"></app-card-course>
     </div>
 </div>

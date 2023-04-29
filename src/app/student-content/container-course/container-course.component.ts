@@ -25,8 +25,7 @@ export class ContainerCourseComponent implements OnInit {
       console.log(data)
     },
     (error)=>{
-      console.log(error)
-      this.error = {message:'not loading the data', isError:true};
+      this.error = {message:`Ocurred an error` , isError:true};
     })
   }
   handleSearch() {
