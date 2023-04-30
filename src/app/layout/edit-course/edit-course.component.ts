@@ -46,20 +46,18 @@ export class EditCourseComponent {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id)
     this.adminservice.get_course_detail(this.id).subscribe((data:any)=>{
       ({nombre:this.nombre, categoria:this.categotia,nivel_curso:this.nivel,codigo_curso:this.codigo,numero_max_estudiantes:this.max, valoraciones:this.valoracion,estado:this.estado,description:this.descripcion} = data)
       this.datos = data;
     },
     (error)=>{
-      console.log(error)
+      this.toastr.error(error)
     }
     )
   }
 
 
   send_values(){
-    console.log(this.nombre)
    const formData = new FormData();
    formData.append("nombre",this.nombre);
    formData.append("categoria",this.categotia);
@@ -71,12 +69,11 @@ export class EditCourseComponent {
    formData.append("description",this.descripcion);
 
    this.adminservice.update_course(formData,this.id).subscribe((data:any)=>{
-       console.log(data)
         this.showSuccess()
        this.duerme()
    },
    (error) => {
-     console.log('Error during POST request', error);
+    this.toastr.error(error)
      // Aquí puede manejar cualquier error que haya ocurrido
    })
 

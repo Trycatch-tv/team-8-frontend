@@ -18,11 +18,9 @@ export class TableCoursesComponent implements OnInit {
   ngOnInit(): void {
 
     const id_profesor = Number(localStorage.getItem('id_teacher'));
-    console.log(id_profesor)
     this.service_admin.getCursosPorProfesor(id_profesor).subscribe((data:any) =>{
       //this.users = JSON.parse(data);
 
-      console.log(data["courses_teacher"])
       this.datos = data["courses_teacher"]
       //this.col = Object.keys(data[0]).slice(0,7)
     });

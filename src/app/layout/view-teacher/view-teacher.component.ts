@@ -29,13 +29,12 @@ export class ViewTeacherComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id)
     this.adminservice.get_teacher_detail(this.id).subscribe((data:any)=>{
       ({nombre:this.name, correo:this.email,area_especializacion:this.area_especializacion,descripcion:this.description,telefono:this.phone, estado:this.estado,contrasena:this.password} = data)
       this.datos = data;
     },
     (error)=>{
-      console.log(error)
+      this.toastr.error(error)
     }
     )
   }

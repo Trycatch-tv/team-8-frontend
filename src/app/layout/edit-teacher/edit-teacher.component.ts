@@ -49,20 +49,18 @@ export class EditTeacherComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id)
     this.adminservice.get_teacher_detail(this.id).subscribe((data:any)=>{
       ({nombre:this.name, correo:this.email,area_especializacion:this.area_especializacion,descripcion:this.description,telefono:this.phone, estado:this.estado,contrasena:this.password} = data)
       this.datos = data;
     },
     (error)=>{
-      console.log(error)
+      this.toastr.error(error)
     }
     )
   }
 
 
   send_values(){
-     console.log(this.name)
     const formData = new FormData();
     formData.append("nombre",this.name);
     formData.append("correo",this.email);
@@ -73,12 +71,11 @@ export class EditTeacherComponent implements OnInit {
     formData.append("contrasena",this.password);
 
     this.adminservice.update_teacher(formData,this.id).subscribe((data:any)=>{
-        console.log(data)
          this.showSuccess()
         this.duerme()
     },
     (error) => {
-      console.log('Error during POST request', error);
+      this.toastr.error(error)
       // Aquí puede manejar cualquier error que haya ocurrido
     })
 

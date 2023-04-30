@@ -26,10 +26,10 @@ export class LoginAdminComponent {
 
     this.adminservice.login_admin(formdata).subscribe((data:any)=>{
       AuthService.login();
+      localStorage.setItem('username',data.username)
       this.router.navigate(['/dashboard-admin/home']);
     },
     (error)=>{
-      console.log("error", error)
       this.toast.error("Contraseña O Correo No Valido");
     })
   }

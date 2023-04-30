@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AdminService } from 'src/app/services/admin/admin.service';
 import { TeacherService } from 'src/app/services/teacher/teacher.service';
 
@@ -11,7 +12,7 @@ import { TeacherService } from 'src/app/services/teacher/teacher.service';
 export class AddCourseComponent {
 
 
-  constructor(private teacherService: TeacherService,private route:Router,private adminservice:AdminService){}
+  constructor(private teacherService: TeacherService,private route:Router,private adminservice:AdminService,private toast:ToastrService){}
   nombre:string= ""
   categoria:string= ""
   nivel_curso:string= ""
@@ -50,10 +51,9 @@ export class AddCourseComponent {
 
   const id_teacher = Number(localStorage.getItem('id_teacher'));
   this.adminservice.agregarCursoProfesor(id_curso,id_teacher).subscribe((data:any)=>{
-    console.log(data)
   },
   (error)=>{
-    console.log(error)
+    this.toast.error(error)
   })
 
 

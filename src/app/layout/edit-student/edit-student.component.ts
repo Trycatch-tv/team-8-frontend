@@ -29,14 +29,12 @@ export class EditStudentComponent  implements OnInit{
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id)
     this.adminservice.get_student_detail(this.id).subscribe((data:any)=>{
       ({nombre:this.name, correo:this.email,ciudad:this.ciudad,telefono:this.phone, estado:this.estado,contrasena:this.password} = data)
       this.datos = data;
-      console.log(this.name,this.email,this.ciudad,this.estado,this.phone,this.password)
     },
     (error)=>{
-      console.log(error)
+      this.toastr.error(error)
     }
     )
   }
@@ -48,7 +46,6 @@ export class EditStudentComponent  implements OnInit{
 
 
   async duerme() {
-    console.log('Inicio');
     await this.sleep(3000);
     this.router.navigate(['/dashboard-admin/content-students']);
   }
@@ -71,7 +68,7 @@ export class EditStudentComponent  implements OnInit{
       this.duerme()
     },
     (error)=>{
-      console.log(error)
+      this.toastr.error(error)
     })
   }
 

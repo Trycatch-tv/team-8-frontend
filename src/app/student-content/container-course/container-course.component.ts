@@ -22,7 +22,6 @@ export class ContainerCourseComponent implements OnInit {
     this.studentService.getlist_courses().subscribe((data:any)=>{
       this.courses = data
       this.coursesAll= data;
-      console.log(data)
     },
     (error)=>{
       this.error = {message:`Ocurred an error` , isError:true};

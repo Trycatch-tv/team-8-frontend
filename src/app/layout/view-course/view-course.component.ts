@@ -29,13 +29,12 @@ export class ViewCourseComponent implements OnInit{
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id)
     this.adminservice.get_course_detail(this.id).subscribe((data:any)=>{
       ({nombre:this.nombre, categoria:this.categotia,nivel_curso:this.nivel,codigo_curso:this.codigo,numero_max_estudiantes:this.max, valoraciones:this.valoracion,estado:this.estado,description:this.descripcion} = data)
       this.datos = data;
     },
     (error)=>{
-      console.log(error)
+      this.toastr.error(error)
     }
     )
   }

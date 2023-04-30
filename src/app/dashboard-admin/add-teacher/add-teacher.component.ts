@@ -34,7 +34,6 @@ export class AddTeacherComponent implements OnInit {
   }
 
   async duerme() {
-    console.log('Inicio');
     await this.sleep(3000);
     this.router.navigate(['/dashboard-admin/content-teachers']);
   }
@@ -52,12 +51,11 @@ export class AddTeacherComponent implements OnInit {
     formData.append("contrasena",this.password);
     formData.append("rol",this.rol)
     return this.adminservice.add_teacher(formData).subscribe((data:any)=>{
-        console.log(data)
          this.showSuccess()
         this.duerme()
     },
     (error) => {
-      console.log('Error during POST request', error);
+      this.toastr.error('Error during POST request', error)
       // Aquí puede manejar cualquier error que haya ocurrido
     })
 

@@ -29,7 +29,6 @@ export class TableStudentsComponent  implements OnInit{
       this.datos = data;
       this.col = Object.keys(data[0]).slice(0,7)
 
-      console.log(data)
     });
 
   }
@@ -46,7 +45,6 @@ export class TableStudentsComponent  implements OnInit{
   onConfirm1() {
     this.messageService.clear('confirm');
     this.service_admin.deleteStudent(this.itemId).subscribe((data:any)=>{
-      console.log(data)
     })
 
     // aquí puedes agregar la lógica que se ejecutará cuando el usuario haga clic en el botón "Yes"

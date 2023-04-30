@@ -30,12 +30,10 @@ export class LoginTeacherComponent implements OnInit {
     this.adminservice.login_teacher(formdata).subscribe((data:any)=>{
       AuthService.login();
       TeachercourseService.data_login(data.id,data.nombre,data.correo)
-      console.log(data)
       this.router.navigate(['/dashboard-teacher/home']);
     },
     (error)=>{
       this.toast.error("Usuario o contraseña no valido");
-      console.log("error",error)
     })
 
   }

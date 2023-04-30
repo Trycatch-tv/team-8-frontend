@@ -20,7 +20,6 @@ export class TableTeachersComponent implements OnInit {
       //this.users = JSON.parse(data);
       this.datos = data;
       this.col = Object.keys(data[0]).slice(0,8)
-      console.log(data)
     });
 
   }
@@ -45,7 +44,6 @@ export class TableTeachersComponent implements OnInit {
 */
 
     this.service_admin.deleteTeacher(this.itemId).subscribe((data:any)=>{
-      console.log(data)
     })
 
     // aquí puedes agregar la lógica que se ejecutará cuando el usuario haga clic en el botón "Yes"

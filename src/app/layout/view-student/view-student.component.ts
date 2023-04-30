@@ -29,14 +29,12 @@ export class ViewStudentComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id)
     this.adminservice.get_student_detail(this.id).subscribe((data:any)=>{
       ({nombre:this.name, correo:this.email,ciudad:this.ciudad,telefono:this.phone, estado:this.estado,contrasena:this.password} = data)
       this.datos = data;
-      console.log(this.name,this.email,this.ciudad,this.estado,this.phone,this.password)
     },
     (error)=>{
-      console.log(error)
+      this.toastr.error(error)
     }
     )
   }

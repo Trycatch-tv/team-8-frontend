@@ -146,7 +146,6 @@ export class RegisterComponent {
     },
     (error)=>{
         this.toast.error("El registro no se completo correctamente")
-        console.log(error)
     })
 
 

@@ -41,7 +41,6 @@ export class UpdateCourseComponent  {
 
 
     this.teacherService.update_course(data,this.courseID).subscribe((data)=>{
-      console.log('Se edito correctamente ' )
       this.router.navigate(['/dashboard-teacher/content-courses'])
     })
   }

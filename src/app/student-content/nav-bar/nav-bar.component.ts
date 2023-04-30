@@ -16,8 +16,6 @@ export class NavBarComponent implements OnInit {
 
   constructor(private router:Router){}
   logout_(){
-    console.log(AuthService.logout())
-    console.log("sadsddd")
     AuthService.logout();
     this.router.navigate(['/login'])
   }

@@ -53,14 +53,12 @@ constructor(private adminservice:AdminService,private router:Router, private toa
     //Se va enviarlos datos para la autenticacion
     this.adminservice.login_student(formdata).subscribe((data:any)=>{
       AuthService.login();
-      console.log(data)
       StudentcourseService.data_login(data.id,data.nombre,data.correo)
       this.toast.success("Inicio de seccion correctamente")
       this.router.navigate(['/student']);
     },
     (error)=>{
       this.toast.error("Usuario o contraseña no valido");
-      console.log("error",error)
     })
 
     this.passwordControl.reset();

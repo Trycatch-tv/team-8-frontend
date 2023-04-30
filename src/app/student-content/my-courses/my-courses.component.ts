@@ -19,7 +19,7 @@ export class MyCoursesComponent implements OnInit {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     const id_student = Number(localStorage.getItem('id'));
-    
+
     this.adminservice.getCursosPorEstudiante(id_student).subscribe((data:any)=>{
       this.datos = data["cursos"]
     },

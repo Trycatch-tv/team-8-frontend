@@ -3,6 +3,9 @@ import { StudentData } from '../type';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AdminService } from 'src/app/services/admin/admin.service';
+import { ToastrService } from 'ngx-toastr';
+
+
 
 @Component({
   selector: 'app-detail-course',
@@ -11,11 +14,12 @@ import { AdminService } from 'src/app/services/admin/admin.service';
 })
 export class DetailCourseComponent implements OnInit {
   private routeSub!: Subscription;
-  constructor(private route: ActivatedRoute,private router:Router,private studentService: AdminService) { }
+  constructor(private route: ActivatedRoute,private router:Router,private studentService: AdminService, private toast:ToastrService) { }
   courseDetail!: StudentData | undefined
   courseID!:string
   isSuscribed:boolean=false
   id_student:any;
+
 
  ngOnInit(): void {
    this.routeSub = this.route.params.subscribe((params)=>{
@@ -31,8 +35,8 @@ export class DetailCourseComponent implements OnInit {
       const isEnrolled= idsStudents.includes(Number(localStorage.getItem('id')));
       if(isEnrolled)this.isSuscribed= true
     }
-    
-    
+
+
    });
 
 }
@@ -41,12 +45,11 @@ export class DetailCourseComponent implements OnInit {
 
   const id_student = Number(localStorage.getItem('id'));
   this.studentService.agregarCursoProfesorAEstudiante(id_curso,id_teacher,id_student).subscribe((data:any)=>{
-    alert('Te has suscrito correctamente')
+    this.toast.success('Te has suscrito correctamente')
     this.router.navigate(['/student/my-courses'])
   },
   (error)=>{
-    alert('ocurrio un error')
-    console.log(error)
+    this.toast.error('ocurrio un error')
   })
 
 
