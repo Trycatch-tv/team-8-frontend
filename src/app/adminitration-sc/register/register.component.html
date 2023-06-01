@@ -1,6 +1,6 @@
 <div class="mx-auto  h-screen grid lg:grid-cols-2 animate-loadItem">
     <div
-        class="relative sm:bg-gradient-to-r bg-gradient-to-b from-banner-bg  via-#F3F4F6-600 to-banner-gray-bg h-screen h-screen flex flex-col justify-center items-center">
+        class="relative sm:bg-gradient-to-r bg-gradient-to-b from-banner-bg  via-#F3F4F6-600 to-banner-gray-bg h-screen  flex flex-col justify-center items-center ">
 
 
         <div class="relative py-3 mx-auto w-96 ">
@@ -45,7 +45,7 @@
                                 <div>
 
                                     <select id="selectedCity" name="selectedCity" formControlName="selectedCity"
-                                        class="w-full border rounded-md border-gray-300 mt-2">
+                                        class="w-full border-b-2  border-gray-300 mt-2">
                                         <option value="">Selecciona tu pais</option>
                                         <option *ngFor="let ct of country" value="{{ct.label}}">{{ ct.label }}
                                         </option>
@@ -125,13 +125,14 @@
                 </div>
             </div>
         </div>
+
     </div>
         <div
-            class="relative sm:bg-gradient-to-l bg-gradient-to-b from-banner-bg  via-#F3F4F6-600 to-banner-gray-bg h-screen h-screen flex flex-col justify-center items-center">
+            class="relative sm:bg-gradient-to-l bg-gradient-to-b from-banner-bg  via-#F3F4F6-600 to-banner-gray-bg h-screen  flex flex-col justify-center items-center">
 
             <div class="  p-8 rounded-full overflow-hidden">
                 <img src="../../../assets/icons/login_icon.png" class=" h-300 object-cover w-full h-full">
             </div>
         </div>
-    
+
 </div>
