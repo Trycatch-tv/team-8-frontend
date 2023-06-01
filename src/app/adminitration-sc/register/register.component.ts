@@ -118,7 +118,7 @@ export class RegisterComponent {
 ///////////////////////////////////////////////
  handleSubmitFormLogin(event: Event) {
     event.preventDefault();
-    alert(`${this.nameControl.value} ${this.emailControl.value} ${this.estadoControl.value} ${this.countryControl.value} ${this.phoneControl.value} ${this.passwordControl.value} ${this.RepeatControl.value}`)
+    //alert(`${this.nameControl.value} ${this.emailControl.value} ${this.estadoControl.value} ${this.countryControl.value} ${this.phoneControl.value} ${this.passwordControl.value} ${this.RepeatControl.value}`)
 
     //Se va enviarlos datos para la autenticacion
 
@@ -133,7 +133,7 @@ export class RegisterComponent {
 
 
 
-    console.log(formdata)
+    //console.log(formdata)
 
 
 
