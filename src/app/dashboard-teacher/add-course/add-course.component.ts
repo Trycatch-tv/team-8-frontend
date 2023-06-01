@@ -20,7 +20,7 @@ export class AddCourseComponent {
   codigo_curso:string= ""
   estado:string= ""
   description:string= ""
-  valoraciones:number= 1
+  valoraciones:number= 8
   id_estudiante:any= null
   id_profesor:any= null
 
