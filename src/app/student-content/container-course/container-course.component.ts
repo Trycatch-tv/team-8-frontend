@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ErrorCourses, StudentData } from '../type';
-import { catchError, throwError } from 'rxjs';
+import { CourseInterface, ErrorCourses } from 'src/app/interface/courses/courses';
 import { AdminService } from 'src/app/services/admin/admin.service';
 @Component({
   selector: 'app-container-course',
@@ -10,8 +9,8 @@ import { AdminService } from 'src/app/services/admin/admin.service';
 export class ContainerCourseComponent implements OnInit {
   inputSearchValue: string = ''
   constructor(private studentService: AdminService) { }
-  coursesAll!: Array<StudentData>
-  courses!: Array<StudentData>
+  coursesAll!: Array<CourseInterface>
+  courses!: Array<CourseInterface>
   error: ErrorCourses={
     message:'',
     isError:false

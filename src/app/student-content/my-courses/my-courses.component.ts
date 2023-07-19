@@ -1,6 +1,7 @@
 import { Component ,OnInit} from '@angular/core';
+import { ErrorCourses } from 'src/app/interface/courses/courses';
 import { AdminService } from 'src/app/services/admin/admin.service';
-import { ErrorCourses } from '../type';
+
 
 @Component({
   selector: 'app-my-courses',
