@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentData } from '../type';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AdminService } from 'src/app/services/admin/admin.service';
 import { ToastrService } from 'ngx-toastr';
+import { CourseInterface } from 'src/app/interface/courses/courses';
 
 
 
@@ -15,7 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 export class DetailCourseComponent implements OnInit {
   private routeSub!: Subscription;
   constructor(private route: ActivatedRoute,private router:Router,private studentService: AdminService, private toast:ToastrService) { }
-  courseDetail!: StudentData | undefined
+  courseDetail!: CourseInterface | undefined
   courseID!:string
   isSuscribed:boolean=false
   id_student:any;
@@ -27,8 +27,8 @@ export class DetailCourseComponent implements OnInit {
    })
 
    this.studentService.getlist_courses().subscribe((data:any) => {
-    const courses = data as StudentData[]; // convierte los datos a un arreglo de StudentData
-    this.courseDetail = courses.find((course: StudentData) => course.id.toString() === this.courseID.toString())
+    const courses = data as CourseInterface[]; // convierte los datos a un arreglo de CourseInterface
+    this.courseDetail = courses.find((course: CourseInterface) => course.id.toString() === this.courseID.toString())
     const idsStudents:any=this.courseDetail?.estudiantes
 
     if (idsStudents !== null && idsStudents !==  undefined && localStorage.getItem('id') !== null) {
