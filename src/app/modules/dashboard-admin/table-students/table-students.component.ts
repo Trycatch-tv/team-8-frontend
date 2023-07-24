@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AdminService} from '../../services/admin/admin.service';
+import {AdminService} from '../../../services/admin/admin.service';
 import { MessageService } from 'primeng/api';
-import {User} from '../../interface/students/students';
+import {User} from '../../../interface/students/students';
 
 
 @Component({

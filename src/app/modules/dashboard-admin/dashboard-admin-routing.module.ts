@@ -5,9 +5,9 @@ import { HomeComponent } from './home/home.component';
 import { TableCoursesComponent } from './table-courses/table-courses.component';
 import { TableStudentsComponent } from './table-students/table-students.component';
 import { TableTeachersComponent } from './table-teachers/table-teachers.component';
-import { SidebarAdminComponent } from '../layout/sidebar-admin/sidebar-admin.component';
+import { SidebarAdminComponent } from '../../layout/sidebar-admin/sidebar-admin.component';
 import { AddTeacherComponent } from './add-teacher/add-teacher.component';
-import { AuthGuard } from '../guards/auth/auth.guard';
+import { AuthGuard } from '../../guards/auth/auth.guard';
 
 const routes: Routes = [
 {

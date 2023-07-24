@@ -20,7 +20,6 @@ export class AddCourseComponent {
   codigo_curso:string= ""
   estado:string= ""
   description:string= ""
-  valoraciones:number= 8
   id_estudiante:any= null
   id_profesor:any= null
 
@@ -34,7 +33,6 @@ export class AddCourseComponent {
       codigo_curso:this.codigo_curso,
       estado:this.estado,
       description:this.description,
-      valoraciones:this.valoraciones,
       id_estudiante:this.id_estudiante,
       id_profesor:this.id_profesor
 

@@ -1,0 +1,10 @@
+version: '3'
+services:
+  frontend:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - .:/usr/src/app
+    restart: always
+

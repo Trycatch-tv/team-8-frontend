@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import {AdminService} from '../../services/admin/admin.service'
+import {AdminService} from '../../../services/admin/admin.service'
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
