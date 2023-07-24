@@ -4,12 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { TableCoursesComponent } from './table-courses/table-courses.component';
 import { TableStudentsComponent } from './table-students/table-students.component';
-import { SidebarTeacherComponent } from '../layout/sidebar-teacher/sidebar-teacher.component';
+import { SidebarTeacherComponent } from '../../layout/sidebar-teacher/sidebar-teacher.component';
 import { combineLatest } from 'rxjs';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { UpdateCourseComponent } from './update-course/update-course.component';
 import { DetailCourseComponent } from './detail-course/detail-course.component';
-import { AuthGuard } from '../guards/auth_teacher/auth.guard';
+import { AuthGuard } from '../../guards/auth_teacher/auth.guard';
 import { ViewStudentComponent } from './view-student/view-student.component';
 
 

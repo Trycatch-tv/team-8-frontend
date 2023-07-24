@@ -14,7 +14,6 @@ export class TeachercourseService {
     localStorage.setItem('nombre_teacher',nombre)
     localStorage.setItem('email_teacher',correo)
 
-    console.log(id,"--",nombre,"----",correo)
   }
 
 }
