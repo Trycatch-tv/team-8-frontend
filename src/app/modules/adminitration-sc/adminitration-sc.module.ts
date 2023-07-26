@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { LoginTeacherComponent } from './login-teacher/login-teacher.component';
 import { ToastrModule } from 'ngx-toastr';
+import { HeaderHomeComponent } from './header-home/header-home.component';
+import { ModalHomeComponent } from './modal-home/modal-home.component';
 @NgModule({
   declarations: [
     LoginComponent,
@@ -16,7 +18,8 @@ import { ToastrModule } from 'ngx-toastr';
     HomeComponent,
     LoginAdminComponent,
     LoginTeacherComponent,
-
+    HeaderHomeComponent,
+    ModalHomeComponent
   ],
   imports: [
     CommonModule,
