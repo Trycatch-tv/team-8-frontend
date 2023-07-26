@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminService } from 'src/app/services/admin/admin.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
 
 import { Router } from '@angular/router';
+import { TeacherService } from 'src/app/services/api';
 
 @Component({
   selector: 'app-add-teacher',
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class AddTeacherComponent implements OnInit {
 
-  constructor(private adminservice:AdminService,private toastr: ToastrService,private route:ActivatedRoute,private router: Router){}
+  constructor(private teacherservice:TeacherService,private toastr: ToastrService,private route:ActivatedRoute,private router: Router){}
 
 
   name:string='';
@@ -50,7 +50,7 @@ export class AddTeacherComponent implements OnInit {
     formData.append("estado",this.estado);
     formData.append("contrasena",this.password);
     formData.append("rol",this.rol)
-    return this.adminservice.add_teacher(formData).subscribe((data:any)=>{
+    return this.teacherservice.add_teacher(formData).subscribe((data:any)=>{
          this.showSuccess()
         this.duerme()
     },

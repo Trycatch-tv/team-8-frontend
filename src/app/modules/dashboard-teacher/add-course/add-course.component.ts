@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { AdminService } from 'src/app/services/admin/admin.service';
-import { TeacherService } from 'src/app/services/teacher/teacher.service';
+import { TeachercourseService } from 'src/app/services/api';
+import { CourseService } from 'src/app/services/api/course/course.service';
+import { TeacherService } from 'src/app/services/api/teacher/teacher.service';
 
 @Component({
   selector: 'app-add-course',
@@ -12,7 +13,7 @@ import { TeacherService } from 'src/app/services/teacher/teacher.service';
 export class AddCourseComponent {
 
 
-  constructor(private teacherService: TeacherService,private route:Router,private adminservice:AdminService,private toast:ToastrService){}
+  constructor(private teacherService: TeacherService,private route:Router,private courseservice:CourseService,private toast:ToastrService, private courseteacherservive:TeachercourseService){}
   nombre:string= ""
   categoria:string= ""
   nivel_curso:string= ""
@@ -38,7 +39,7 @@ export class AddCourseComponent {
 
     }
 
-    this.teacherService.add_course(data).subscribe((data_da:any)=>{
+    this.courseservice.add_course(data).subscribe((data_da:any)=>{
       this.route.navigate(['/dashboard-teacher/content-courses'])
       this.send_teacher_course(data_da.id)
     })
@@ -48,7 +49,7 @@ export class AddCourseComponent {
    send_teacher_course(id_curso:any){
 
   const id_teacher = Number(localStorage.getItem('id_teacher'));
-  this.adminservice.agregarCursoProfesor(id_curso,id_teacher).subscribe((data:any)=>{
+  this.courseteacherservive.agregarCursoProfesor(id_curso,id_teacher).subscribe((data:any)=>{
   },
   (error)=>{
     this.toast.error(error)

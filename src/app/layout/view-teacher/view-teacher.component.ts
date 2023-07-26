@@ -1,8 +1,8 @@
 import { Component ,OnInit} from '@angular/core';
-import {AdminService} from '../../services/admin/admin.service'
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { TeacherService } from 'src/app/services/api';
 
 @Component({
   selector: 'app-view-teacher',
@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ViewTeacherComponent implements OnInit {
 
-  constructor(private adminservice:AdminService , private route:ActivatedRoute,private router: Router, private toastr: ToastrService){}
+  constructor(private teacherservice:TeacherService , private route:ActivatedRoute,private router: Router, private toastr: ToastrService){}
 
 
 
@@ -29,7 +29,7 @@ export class ViewTeacherComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.adminservice.get_teacher_detail(this.id).subscribe((data:any)=>{
+    this.teacherservice.get_teacher_detail(this.id).subscribe((data:any)=>{
       ({nombre:this.name, correo:this.email,area_especializacion:this.area_especializacion,descripcion:this.description,telefono:this.phone, estado:this.estado,contrasena:this.password} = data)
       this.datos = data;
     },

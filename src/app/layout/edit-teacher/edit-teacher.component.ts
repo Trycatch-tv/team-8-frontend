@@ -1,10 +1,10 @@
 import { Component,OnInit } from '@angular/core';
 
-import { AdminService } from 'src/app/services/admin/admin.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
 
 import { Router } from '@angular/router';
+import { TeacherService } from 'src/app/services/api';
 
 
 
@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class EditTeacherComponent implements OnInit {
 
-  constructor(private adminservice:AdminService,private toastr: ToastrService,private route:ActivatedRoute,private router: Router){}
+  constructor(private teacherservice:TeacherService,private toastr: ToastrService,private route:ActivatedRoute,private router: Router){}
 
 
 
@@ -49,7 +49,7 @@ export class EditTeacherComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.adminservice.get_teacher_detail(this.id).subscribe((data:any)=>{
+    this.teacherservice.get_teacher_detail(this.id).subscribe((data:any)=>{
       ({nombre:this.name, correo:this.email,area_especializacion:this.area_especializacion,descripcion:this.description,telefono:this.phone, estado:this.estado,contrasena:this.password} = data)
       this.datos = data;
     },
@@ -70,7 +70,7 @@ export class EditTeacherComponent implements OnInit {
     formData.append("estado",this.estado);
     formData.append("contrasena",this.password);
 
-    this.adminservice.update_teacher(formData,this.id).subscribe((data:any)=>{
+    this.teacherservice.update_teacher(formData,this.id).subscribe((data:any)=>{
          this.showSuccess()
         this.duerme()
     },

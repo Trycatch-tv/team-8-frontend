@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators, FormGroup, Form } from '@angular/forms';
-import {StudentService} from '../../../services/student/student.service'
+import {StudentService} from '../../../services/api/student/student.service'
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';

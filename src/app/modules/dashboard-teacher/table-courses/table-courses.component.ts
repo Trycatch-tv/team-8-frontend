@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AdminService} from '../../../services/admin/admin.service'
 import { MessageService } from 'primeng/api';
+import { CourseService } from 'src/app/services/api/course/course.service';
+import { TeachercourseService } from 'src/app/services/api';
 
 @Component({
   selector: 'app-table-courses',
@@ -13,12 +14,12 @@ export class TableCoursesComponent implements OnInit {
   datos!:any;
   itemId:any;
 
-  constructor(private service_admin:AdminService,private messageService: MessageService){}
+  constructor(private courseservice:CourseService,private messageService: MessageService,private courseteacher:TeachercourseService){}
 
   ngOnInit(): void {
 
     const id_profesor = Number(localStorage.getItem('id_teacher'));
-    this.service_admin.getCursosPorProfesor(id_profesor).subscribe((data:any) =>{
+    this.courseteacher.getCursosPorProfesor(id_profesor).subscribe((data:any) =>{
       //this.users = JSON.parse(data);
 
       this.datos = data["courses_teacher"]
@@ -34,7 +35,7 @@ export class TableCoursesComponent implements OnInit {
 
   onConfirm2() {
     this.messageService.clear('confirm');
-    this.service_admin.deleteCourse(this.itemId).subscribe((data:any)=>{
+    this.courseservice.deleteCourse(this.itemId).subscribe((data:any)=>{
       this.datos=this.datos.filter((item:any)=>item.id !== this.itemId)
     })
 

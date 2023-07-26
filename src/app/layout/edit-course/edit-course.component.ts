@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {AdminService} from '../../services/admin/admin.service'
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { CourseService } from 'src/app/services/api/course/course.service';
 
 
 
@@ -14,7 +14,7 @@ import { ToastrService } from 'ngx-toastr';
 export class EditCourseComponent {
 
 
-  constructor(private adminservice:AdminService , private route:ActivatedRoute,private router: Router, private toastr: ToastrService){}
+  constructor(private courseservice:CourseService , private route:ActivatedRoute,private router: Router, private toastr: ToastrService){}
 
 
 
@@ -46,7 +46,7 @@ export class EditCourseComponent {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.adminservice.get_course_detail(this.id).subscribe((data:any)=>{
+    this.courseservice.get_course_detail(this.id).subscribe((data:any)=>{
       ({nombre:this.nombre, categoria:this.categotia,nivel_curso:this.nivel,codigo_curso:this.codigo,numero_max_estudiantes:this.max, valoraciones:this.valoracion,estado:this.estado,description:this.descripcion} = data)
       this.datos = data;
     },
@@ -68,7 +68,7 @@ export class EditCourseComponent {
    formData.append("estado",this.estado);
    formData.append("description",this.descripcion);
 
-   this.adminservice.update_course(formData,this.id).subscribe((data:any)=>{
+   this.courseservice.update_course(formData,this.id).subscribe((data:any)=>{
         this.showSuccess()
        this.duerme()
    },

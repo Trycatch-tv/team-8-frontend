@@ -1,6 +1,6 @@
 import { Component ,OnInit} from '@angular/core';
-import { AdminService } from 'src/app/services/admin/admin.service';
 import { ErrorCourses } from '../type';
+import { StudentcourseService } from 'src/app/services/api';
 
 @Component({
   selector: 'app-my-courses',
@@ -14,13 +14,13 @@ export class MyCoursesComponent implements OnInit {
     isError:false
   }
 
-  constructor(private adminservice:AdminService){}
+  constructor(private studentcourse:StudentcourseService){}
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     const id_student = Number(localStorage.getItem('id'));
 
-    this.adminservice.getCursosPorEstudiante(id_student).subscribe((data:any)=>{
+    this.studentcourse.getCursosPorEstudiante(id_student).subscribe((data:any)=>{
       this.datos = data["cursos"]
     },
     (error)=>{

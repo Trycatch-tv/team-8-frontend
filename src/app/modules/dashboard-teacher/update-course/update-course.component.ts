@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { TeacherService } from 'src/app/services/teacher/teacher.service';
+import { CourseService } from 'src/app/services/api/course/course.service';
+import { TeacherService } from 'src/app/services/api/teacher/teacher.service';
 
 @Component({
   selector: 'app-update-course',
@@ -9,7 +10,7 @@ import { TeacherService } from 'src/app/services/teacher/teacher.service';
   styleUrls: ['./update-course.component.css']
 })
 export class UpdateCourseComponent  {
-  constructor(private teacherService:TeacherService,private router: Router, private route: ActivatedRoute){}
+  constructor(private courseservice:CourseService,private router: Router, private route: ActivatedRoute){}
   private routeSub!: Subscription;
   nombre:string= ""
   categoria:string= ""
@@ -40,7 +41,7 @@ export class UpdateCourseComponent  {
     }
 
 
-    this.teacherService.update_course(data,this.courseID).subscribe((data)=>{
+    this.courseservice.update_course(data,this.courseID).subscribe((data)=>{
       this.router.navigate(['/dashboard-teacher/content-courses'])
     })
   }
@@ -49,7 +50,7 @@ export class UpdateCourseComponent  {
       this.courseID=params['id']
      })
 
-    this.teacherService.getOneCourse(this.courseID).subscribe((data:any)=>{
+    this.courseservice.getOneCourse(this.courseID).subscribe((data:any)=>{
       this.nombre=data.nombre
       this.categoria=data.categoria
       this.nivel_curso=data.nivel_curso

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseInterface, ErrorCourses } from 'src/app/interface/courses/courses';
-import { AdminService } from 'src/app/services/admin/admin.service';
+import { CourseService } from 'src/app/services/api/course/course.service';
 @Component({
   selector: 'app-container-course',
   templateUrl: './container-course.component.html',
@@ -8,7 +8,7 @@ import { AdminService } from 'src/app/services/admin/admin.service';
 })
 export class ContainerCourseComponent implements OnInit {
   inputSearchValue: string = ''
-  constructor(private studentService: AdminService) { }
+  constructor(private courseservice: CourseService) { }
   coursesAll!: Array<CourseInterface>
   courses!: Array<CourseInterface>
   error: ErrorCourses={
@@ -18,7 +18,7 @@ export class ContainerCourseComponent implements OnInit {
 
 
   ngOnInit() {
-    this.studentService.getlist_courses().subscribe((data:any)=>{
+    this.courseservice.getlist_courses().subscribe((data:any)=>{
       this.courses = data
       this.coursesAll= data;
     },
