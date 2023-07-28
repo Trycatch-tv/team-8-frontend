@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns:{
+        '2': '1fr 400px',
+        '2a':'1fr 1fr'
+      },
       colors:{
         'banner-bg':'#2764E9',
         'banner-gray-bg':'#F3F4F6',

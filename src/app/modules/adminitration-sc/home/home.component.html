@@ -1,5 +1,52 @@
-<!-- component -->
-<section class="relative min-h-screen bg-blueGray-50 animate-loadItem pb-10">
+<div class="bg-[#13161C]">
+  <div class="grid grid-cols-2 w-full container container-lg mx-auto">
+    <div>
+      <app-hero></app-hero>
+
+    </div>
+    <div>
+      <app-cardNotification></app-cardNotification>
+      <app-btnDocumentation></app-btnDocumentation>
+    </div>
+
+  </div>
+
+  <section >
+    <app-learning></app-learning>
+  </section >
+
+  <app-bannerHome></app-bannerHome>
+  <section class="px-4">
+    <h2 class="text-center text-white mt-4 mb-16 font-normal my-4 text-5xl text-center text-gray-200">
+      ¿Que dicen nuestros <br> <span class="font-bold text-[#C74C2A]">estudiantes</span>?
+    </h2>
+    <div class="min-h-[50vh] grid grid-cols-2a mb-8 gap-6 container max-w-6xl mx-auto">
+      <app-cardComments></app-cardComments>
+      <app-cardComments></app-cardComments>
+      <app-cardComments></app-cardComments>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="font-normal my-4 text-5xl text-center text-gray-200">¿Quienes son los <br> <span
+        class="font-bold text-[#C74C2A]">desarrolladores</span>?</h2>
+    <div class="min-h-[70vh] flex md:gap-8 flex-wrap justify-center">
+      <app-cardsDevs></app-cardsDevs>
+      <app-cardsDevs></app-cardsDevs>
+      <app-cardsDevs></app-cardsDevs>
+    </div>
+  </section>
+
+  <footer class=" bg-gray-900 text-gray-200 w-full h-20 flex justify-center p">
+    <div class="container mx-auto flex items-center justify-center gap-2 flex-col">
+      <p class="text-sm">Organización Trycatch</p>
+      <p class="text-sm">Derechos Reservados © 2023 Team-8 </p>
+    </div>
+  </footer>
+</div>
+
+
+<!-- <section class="relative min-h-screen bg-blueGray-50 animate-loadItem pb-10">
   <div class="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
     <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
             background-image: url('../../../assets/imgs/home_bg.jpg');
@@ -100,10 +147,5 @@
 
     </div>
   </section>
-  <footer class="absolute bottom-0 bg-gray-900 text-gray-200 w-full h-20 flex justify-center p"> 
-    <div class="container mx-auto flex items-center justify-center gap-2 flex-col">
-      <p class="text-sm">Organización Trycatch</p>
-      <p class="text-sm">Derechos  Reservados  © 2023 Team-8 </p>
-    </div>
-  </footer>
-</section>
+  
+</section> -->
