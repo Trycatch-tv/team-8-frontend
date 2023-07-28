@@ -11,7 +11,7 @@ module.exports = {
         'text-card': '#B3CFF2',
         'text-title-card': '#0455BF'
       },
-    
+
       backgroundColor: {
         'primary-home': '#13161C',
         'secondary-home': '#fff',
@@ -38,13 +38,12 @@ module.exports = {
         openModal: 'openModal ease-in-out .8s',
         loadItem: 'loadItem ease-in-out .8s'
       }
-      
+
     },
   },
   plugins: [
     require('tailwindcss'),
     require('autoprefixer'),
-    require('tailwindcss-filters')
   ],
 }
 
