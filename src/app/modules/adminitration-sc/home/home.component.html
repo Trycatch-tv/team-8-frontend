@@ -1,42 +1,31 @@
 <div class="bg-[#13161C]">
-  <div class="grid grid-cols-2 w-full container container-lg mx-auto">
-    <div>
-      <app-hero></app-hero>
-
-    </div>
-    <div>
-      <app-cardNotification></app-cardNotification>
-      <app-btnDocumentation></app-btnDocumentation>
-    </div>
-
-  </div>
-
-  <section >
-    <app-learning></app-learning>
-  </section >
-
+  <!-- ----hero------ -->
+  <app-hero></app-hero>
+  <!-- ----learning------ -->
+  <app-learning></app-learning>
+  <!-- ----bannerHome------ -->
   <app-bannerHome></app-bannerHome>
+
+  <!-- -----seccion-comentarios-de-estudiantes--- -->
   <section class="px-4">
     <h2 class="text-center text-white mt-4 mb-16 font-normal my-4 text-5xl text-center text-gray-200">
       ¿Que dicen nuestros <br> <span class="font-bold text-[#C74C2A]">estudiantes</span>?
     </h2>
     <div class="min-h-[50vh] grid grid-cols-2a mb-8 gap-6 container max-w-6xl mx-auto">
+      <app-cardComments class="shr"></app-cardComments>
       <app-cardComments></app-cardComments>
       <app-cardComments></app-cardComments>
       <app-cardComments></app-cardComments>
     </div>
   </section>
-
+  <!-- -----seccion-desarrolladores--- -->
   <section>
     <h2 class="font-normal my-4 text-5xl text-center text-gray-200">¿Quienes son los <br> <span
-        class="font-bold text-[#C74C2A]">desarrolladores</span>?</h2>
-    <div class="min-h-[70vh] flex md:gap-8 flex-wrap justify-center">
+      class="font-bold text-[#C74C2A]">desarrolladores</span>?</h2>
       <app-cardsDevs></app-cardsDevs>
-      <app-cardsDevs></app-cardsDevs>
-      <app-cardsDevs></app-cardsDevs>
-    </div>
-  </section>
-
+    </section>
+    
+    <!-- -----footer--- -->
   <footer class=" bg-gray-900 text-gray-200 w-full h-20 flex justify-center p">
     <div class="container mx-auto flex items-center justify-center gap-2 flex-col">
       <p class="text-sm">Organización Trycatch</p>

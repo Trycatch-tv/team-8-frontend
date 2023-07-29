@@ -1,9 +1,9 @@
-
-  <div class="nft">
+<div class="min-h-[70vh] flex md:gap-2 max-w-5xl mx-auto flex-wrap justify-center">
+  <div class="nft" *ngFor="let dev of devs">
     <div class='main'>
       <img class='tokenImage' src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="NFT" />
-      <h2 class="text-xl text-gray-200">Name dev</h2>
-      <p class='description'>Description dev</p>
+      <h2 class="text-xl text-gray-200">{{dev.name}}</h2>
+      <p class='description'>{{dev.description}}</p>
       <div class='tokenInfo'>
         <div class="price">
           <ins>◘</ins>
@@ -23,5 +23,8 @@
       </div>
     </div>
   </div>
+
+</div>
+
   
 
