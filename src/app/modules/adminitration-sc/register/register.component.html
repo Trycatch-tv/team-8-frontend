@@ -1,4 +1,7 @@
-<div class="mx-auto  h-screen grid lg:grid-cols-2 animate-loadItem">
+
+<!--
+
+  <div class="mx-auto  h-screen grid lg:grid-cols-2 animate-loadItem">
     <div
         class="relative sm:bg-gradient-to-r bg-gradient-to-b from-banner-bg  via-#F3F4F6-600 to-banner-gray-bg h-screen  flex flex-col justify-center items-center ">
 
@@ -135,4 +138,121 @@
             </div>
         </div>
 
+</div>
+-->
+
+
+<div class="h-screen bg-cover bg-center" style="background-image:url(https://xqsuperschool.org/rethinktogether/wp-content/uploads/sites/5/2022/01/xq-What-Is-the-Role-of-Curriculum-in-Student-Centered-Learning.jpg)">
+
+
+<div>
+<form [formGroup]="Empregister" (ngSubmit)="HandleSubmit()" class="p-8 ">
+  <mat-stepper [linear]="isLinear" #stepper class="rounded-md mt-8 py-8">
+
+      <mat-step [stepControl]="Basicform">
+        <div formGroupName="basic">
+
+
+          <ng-template matStepLabel class="">Basica Información</ng-template>
+            <div class="bg-gray-100 mb-4 mt-4">
+              <div class="text-lg px-3 py-2">
+                <h1 class="font-bold ">Terminos y condiciones</h1>
+                  <p class="font-light ml-2 ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet maxime earum impedit est nostrum eius sit nam eaque minima! Molestias aspernatur voluptatum at quod ducimus delectus adipisci eius expedita rem.</p>
+              </div>
+            </div>
+          <div>
+            <button mat-raised-button color="primary" matStepperNext>Next</button>
+          </div>
+      </div>
+      </mat-step>
+      <mat-step [stepControl]="documentacionForm"  label="Documentacion ">
+        <div formGroupName="doc" class="mt-4">
+          <mat-form-field appearance="fill" class="max-width">
+            <mat-label>Tipo de documento</mat-label> <!-- Título del mat-select -->
+            <mat-select formControlName="tipo_documento" required>
+              <!-- Agrega las opciones del select aquí -->
+              <mat-option value="TI">Tarjeta de identidad</mat-option>
+              <mat-option value="CD">Cedula</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="max-width">
+              <mat-label>No. de documento</mat-label>
+              <input matInput type="text" formControlName="num_documento"
+                     required>
+           </mat-form-field>
+
+           <div class="pb-4">
+              <label for="file-input" class="ml-1 font-light text-sm text-gray-400">Carga tu identificación</label>
+              <input type="file" name="file-input" id="file-input" class="block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-white dark:border-gray-200 dark:text-gray-400
+                file:bg-transparent file:border-0
+                file:bg-white file:mr-4
+                file:py-3 file:px-4
+                dark:file:bg-white dark:file:text-gray-400" formControlName="fileControl">
+              </div>
+
+
+          <div>
+            <button mat-raised-button color="primary" matStepperPrevious>Back</button> |
+            <button mat-raised-button color="primary" matStepperNext>Next</button>
+          </div>
+      </div>
+      </mat-step>
+      <mat-step [stepControl]="informationPersonForm" label="Datos Personales">
+          <div formGroupName="information_person" class="mt-4">
+            <mat-form-field appearance="fill" class="max-width">
+              <mat-label>Nombre Completo</mat-label>
+              <input matInput formControlName="fullName" placeholder=""
+                     required>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="max-width">
+                <mat-label>Correo Electronico</mat-label>
+                <input matInput formControlName="email" placeholder="example@gmail.com"
+                       required>
+              </mat-form-field>
+              <mat-form-field appearance="fill" class="max-width" class="max-width">
+                <mat-label>Telefono</mat-label>
+                <input matInput formControlName="phone" placeholder="3154859664"
+                       required>
+              </mat-form-field>
+
+
+
+              <mat-form-field appearance="fill" class="max-width" class="max-width">
+                <mat-label>Departamento</mat-label>
+                <mat-select formControlName="departments" required>
+                  <mat-option *ngFor="let departamento of departaments" value="{{ departamento.departamento }}">{{ departamento.departamento }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            <div>
+              <button mat-raised-button color="primary" matStepperPrevious>Back</button> |
+            <button mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+        </div>
+        </mat-step>
+
+
+        <mat-step [stepControl]="passwordEndForm" label="Asignar clave y finalizar">
+          <div formGroupName="password_end" class="mt-4">
+            <mat-form-field appearance="fill" class="max-width">
+              <mat-label>Contraseña</mat-label>
+              <input matInput type="password" formControlName="password" placeholder="*********"
+                     required>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="max-width">
+                <mat-label>Confirma contraseña</mat-label>
+                <input matInput type="password" formControlName="confirm_password" placeholder="*********"
+                       required>
+              </mat-form-field>
+
+            <div>
+              <button mat-raised-button color="primary" matStepperPrevious>Back</button> |
+              <button mat-raised-button color="accent" (click)="onSubmit()">Submit</button>
+            </div>
+        </div>
+        </mat-step>
+
+    </mat-stepper>
+  </form>
+
+</div>
 </div>

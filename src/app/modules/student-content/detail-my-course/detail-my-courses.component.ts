@@ -22,8 +22,9 @@ export class DetailMyCourseComponent implements OnInit {
       this.courseID=params['id']
      })
 
+
      this.courseservice.getlist_courses().subscribe((data:any) => {
-      const courses = data as CourseInterface[]; // convierte los datos a un arreglo de StudentData
+      const courses = data as CourseInterface[]; // convierte los datos a un arreglo de CourseInterface
       this.courseDetail = courses.find((course: CourseInterface) => course.id.toString() === this.courseID.toString());
     });
   }
