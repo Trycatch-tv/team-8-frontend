@@ -174,7 +174,12 @@ export class RegisterComponent implements OnInit {
     if (this.Empregister.valid) {
       const formData = this.Empregister.value;
       console.log(formData);
-      this.route.navigate(['/']);
+
+      const formDataString = JSON.stringify(formData);
+
+
+      this.route.navigate(['/account/email-confirmation'],{queryParams:{data:formDataString}});
+
       this.Empregister.reset();
       // Aquí puedes realizar las acciones que necesites con los datos del formulario.
       // Por ejemplo, enviar los datos al backend o mostrarlos en una alerta.

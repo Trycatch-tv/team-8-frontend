@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ConfirmationHomeComponent } from './confirmation-home/confirmation-home.component';
 
 import { ConfirmationEmailRouting } from './confirmation-email-routing.module';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms'; // Asegúrate de importar ReactiveFormsModule
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { ConfirmationEmailRouting } from './confirmation-email-routing.module';
   ],
   imports: [
     CommonModule,
-    ConfirmationEmailRouting
+    ConfirmationEmailRouting,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ConfirmationEmailModule { }
