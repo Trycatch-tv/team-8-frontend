@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth/auth_teacher/auth.service';
+import { AuthService } from 'src/app/services/api/auth/auth_teacher/auth.service';
 @Component({
   selector: 'app-sidebar-teacher',
   templateUrl: './sidebar-teacher.component.html',

@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { AdminService } from 'src/app/services/admin/admin.service';
-import { AuthService } from 'src/app/services/auth/auth_student/auth.service';
-import { StudentcourseService } from 'src/app/services/relations/studentcourse/studentcourse.service';
-
+import { AuthService } from 'src/app/services/api/auth/auth_student/auth.service';
+import { StudentcourseService } from 'src/app/services/api/relations/studentcourse/studentcourse.service';
+import { StudentService } from 'src/app/services/api';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,7 +21,7 @@ export class LoginComponent {
   password:string='';
 
 
-constructor(private adminservice:AdminService,private router:Router, private toast:ToastrService) {
+constructor(private router:Router, private toast:ToastrService, private studenservice:StudentService) {
     this.passwordControl = new FormControl('');
     this.emailControl = new FormControl('', [Validators.required, this.emailValidator]);
     this.emailForm = new FormGroup({
@@ -51,7 +50,7 @@ constructor(private adminservice:AdminService,private router:Router, private toa
     console.log(this.emailControl.value)
     formdata.append("contrasena", this.passwordControl.value)
     //Se va enviarlos datos para la autenticacion
-    this.adminservice.login_student(formdata).subscribe((data:any)=>{
+    this.studenservice.login_student(formdata).subscribe((data:any)=>{
       AuthService.login();
       StudentcourseService.data_login(data.id,data.nombre,data.correo)
       this.toast.success("Inicio de seccion correctamente")

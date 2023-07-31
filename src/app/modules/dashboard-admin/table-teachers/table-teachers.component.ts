@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AdminService} from '../../../services/admin/admin.service'
 import { MessageService } from 'primeng/api';
+import { TeacherService } from 'src/app/services/api';
 @Component({
   selector: 'app-table-teachers',
   templateUrl: './table-teachers.component.html',
@@ -14,9 +14,9 @@ export class TableTeachersComponent implements OnInit {
   showModal=false;
   itemId:any;
 
-  constructor(private service_admin:AdminService,private messageService: MessageService){}
+  constructor(private teacherservice:TeacherService,private messageService: MessageService){}
   ngOnInit(): void {
-    this.service_admin.getlist_teachers().subscribe((data:any) =>{
+    this.teacherservice.getlist_teachers().subscribe((data:any) =>{
       //this.users = JSON.parse(data);
       this.datos = data;
       this.col = Object.keys(data[0]).slice(0,8)
@@ -43,7 +43,7 @@ export class TableTeachersComponent implements OnInit {
     .then(console.log);
 */
 
-    this.service_admin.deleteTeacher(this.itemId).subscribe((data:any)=>{
+    this.teacherservice.deleteTeacher(this.itemId).subscribe((data:any)=>{
     })
 
     // aquí puedes agregar la lógica que se ejecutará cuando el usuario haga clic en el botón "Yes"

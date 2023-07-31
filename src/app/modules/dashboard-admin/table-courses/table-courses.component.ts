@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AdminService} from '../../../services/admin/admin.service';
 import { MessageService } from 'primeng/api';
+import { CourseService } from 'src/app/services/api/course/course.service';
 
 @Component({
   selector: 'app-table-courses',
@@ -15,9 +15,9 @@ export class TableCoursesComponent implements OnInit{
   datos:any;
   itemId:any;
 
-  constructor(private service_admin:AdminService,private messageService: MessageService){}
+  constructor(private courseservice:CourseService,private messageService: MessageService){}
   ngOnInit(): void {
-    this.service_admin.getlist_courses().subscribe((data:any) =>{
+    this.courseservice.getlist_courses().subscribe((data:any) =>{
       //this.users = JSON.parse(data);
       this.datos = data;
       this.col = Object.keys(data[0]).slice(0,7)
@@ -34,7 +34,7 @@ export class TableCoursesComponent implements OnInit{
 
   onConfirm2() {
     this.messageService.clear('confirm');
-    this.service_admin.deleteCourse(this.itemId).subscribe((data:any)=>{
+    this.courseservice.deleteCourse(this.itemId).subscribe((data:any)=>{
     })
 
     // aquí puedes agregar la lógica que se ejecutará cuando el usuario haga clic en el botón "Yes"

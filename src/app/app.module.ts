@@ -12,6 +12,15 @@ import { SidebarAdminComponent } from './layout/sidebar-admin/sidebar-admin.comp
 import { RouterModule } from '@angular/router'; // Agregar esta línea de importación
 import { HttpClientModule } from '@angular/common/http';
 
+
+
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
+
+
+import { MatIconModule } from '@angular/material/icon'; // Importa el módulo de iconos
+
+
 import { ToastModule } from 'primeng/toast';
 import { StudentContentModule } from './modules/student-content/student-content.module';
 import { EditStudentComponent } from './layout/edit-student/edit-student.component';
@@ -24,6 +33,9 @@ import { EditTeacherComponent } from './layout/edit-teacher/edit-teacher.compone
 import { EditCourseComponent } from './layout/edit-course/edit-course.component';
 import { ViewCourseComponent } from './layout/view-course/view-course.component';
 
+import { MatStepperModule } from '@angular/material/stepper'; // Asegúrate de importar el módulo del stepper u otros módulos que necesites
+
+import { ConfirmationEmailModule } from './modules/confirmation-email/confirmation-email.module';
 
 @NgModule({
   declarations: [
@@ -53,6 +65,11 @@ import { ViewCourseComponent } from './layout/view-course/view-course.component'
     ToastModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    MatSlideToggleModule,
+    MatStepperModule,
+    MatIconModule,
+    ConfirmationEmailModule,
+
 
   ],
   providers: [MessageService],

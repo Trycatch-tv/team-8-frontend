@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { TeacherService } from 'src/app/services/teacher/teacher.service';
+import { CourseService } from 'src/app/services/api/course/course.service';
 
 @Component({
   selector: 'app-detail-course',
@@ -9,7 +9,7 @@ import { TeacherService } from 'src/app/services/teacher/teacher.service';
   styleUrls: ['./detail-course.component.css']
 })
 export class DetailCourseComponent implements OnInit {
-  constructor(private teacherService:TeacherService, private route: ActivatedRoute){}
+  constructor(private courseservice:CourseService, private route: ActivatedRoute){}
 
   private routeSub!:Subscription
   nombre:string= ""
@@ -32,7 +32,7 @@ export class DetailCourseComponent implements OnInit {
       this.courseID=params['id']
      })
 
-    this.teacherService.getOneCourse(this.courseID).subscribe((data:any)=>{
+    this.courseservice.getOneCourse(this.courseID).subscribe((data:any)=>{
       this.nombre=data.nombre
       this.categoria=data.categoria
       this.nivel_curso=data.nivel_curso
@@ -41,7 +41,7 @@ export class DetailCourseComponent implements OnInit {
       this.estado=data.estado
       this.description=data.description
 
-     
+
     })
   }
 }

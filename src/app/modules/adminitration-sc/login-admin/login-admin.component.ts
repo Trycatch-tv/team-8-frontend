@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {  ToastrService } from 'ngx-toastr';
-import { AdminService } from 'src/app/services/admin/admin.service';
+import { AdminService } from 'src/app/services/api/admin/admin.service';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth/auth.service';
+import { AuthService } from 'src/app/services/api/auth/auth.service';
 @Component({
   selector: 'app-login-admin',
   templateUrl: './login-admin.component.html',

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-   content: [
+  content: [
     "./src/**/*.{html,ts}",
   ],
   theme: {
@@ -21,20 +21,21 @@ module.exports = {
       width: {
         '300': '300px',
       },
-      keyframes:{
-        openModal:{
+      keyframes: {
+        openModal: {
           '0%': { transform: 'translateX(2000px)' },
           '100%': { transform: 'translateX(0)' },
         },
-        loadItem:{
+        loadItem: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         }
       },
-      animation:{
-        openModal:'openModal ease-in-out .8s',
-        loadItem:'loadItem ease-in-out .8s'
+      animation: {
+        openModal: 'openModal ease-in-out .8s',
+        loadItem: 'loadItem ease-in-out .8s'
       }
+
     },
   },
   plugins: [
