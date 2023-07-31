@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { FormControl, Validators, FormGroup, Form } from '@angular/forms';
-import {StudentService} from '../../../services/student/student.service'
+import { Component,OnInit } from '@angular/core';
+import { FormControl, Validators, FormGroup, Form,FormBuilder } from '@angular/forms';
+import {StudentService} from '../../../services/api/student/student.service'
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
@@ -113,14 +113,16 @@ export class RegisterComponent implements OnInit {
 
    // Validación personalizada para el tamaño máximo del archivo
    fileSizeValidator(control: AbstractControl): { [key: string]: any } | null {
-    const maxSizeInBytes = 1024 * 1024; // 1 MB
+    const maxSizeInBytes = 10 * 1024 * 1024; // 10 MB
     const allowedExtensions = ['pdf']; // Array de extensiones permitidas (puedes agregar más extensiones si lo deseas)
     const file = control.value;
 
 
+    console.log(file)
     const startIndex = file.lastIndexOf('\\') + 1;
     const filename = file.slice(startIndex);
     //console.log(fileName)
+
 
 
     if (!filename){
@@ -176,6 +178,7 @@ export class RegisterComponent implements OnInit {
       console.log(formData);
 
       const formDataString = JSON.stringify(formData);
+
 
 
       this.route.navigate(['/account/email-confirmation'],{queryParams:{data:formDataString}});

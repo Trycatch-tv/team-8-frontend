@@ -11,30 +11,30 @@ export class StudentService {
 
 
   add_student(formdata:any){
-    return this.http.post(`${apiUrl}add_student/`,formdata);
+    return this.http.post(`${apiUrl}api/add_student/`,formdata);
   }
 
   getlist_students() {
-    return this.http.get<any[]>(`${apiUrl}list_students/`);
+    return this.http.get<any[]>(`${apiUrl}api/list_students/`);
   }
 
   deleteStudent(id: number) {
-    return this.http.delete(`${apiUrl}/delete_student/${id}/`);
+    return this.http.delete(`${apiUrl}api/delete_student/${id}/`);
   }
 
 
   get_student_detail(id:any){
-    return this.http.get(`${apiUrl}/update_student/${id}/`);
+    return this.http.get(`${apiUrl}api/update_student/${id}/`);
   }
 
 
   update_student(formdata:any, id:any){
-    return this.http.put(`${apiUrl}/update_student/${id}/`, formdata);
+    return this.http.put(`${apiUrl}api/update_student/${id}/`, formdata);
   }
 
 
   login_student(formdata:any){
-    return this.http.post(`${apiUrl}/student-login/`, formdata);
+    return this.http.post(`${apiUrl}api/student-login/`, formdata);
   }
 
 
