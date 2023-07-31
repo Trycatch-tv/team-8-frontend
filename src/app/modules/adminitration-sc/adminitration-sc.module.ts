@@ -17,6 +17,7 @@ import { CardNotificationComponent } from './cardNotification/cardNotification.c
 import { CardsDevsComponent } from './cardsDevs/cardsDevs.component';
 import { CardCommentsComponent } from './cardComments/cardComments.component';
 import { BtnDocumentationComponent } from './btnDocumentation/btnDocumentation.component';
+import { CreatorsAtTeacherComponent } from './creatorsAtTeacher/creatorsAtTeacher.component';
 @NgModule({
   declarations: [
     LoginComponent,
@@ -31,7 +32,8 @@ import { BtnDocumentationComponent } from './btnDocumentation/btnDocumentation.c
     CardNotificationComponent,
     CardsDevsComponent,
     CardCommentsComponent,
-    BtnDocumentationComponent
+    BtnDocumentationComponent,
+    CreatorsAtTeacherComponent
   ],
   imports: [
     CommonModule,

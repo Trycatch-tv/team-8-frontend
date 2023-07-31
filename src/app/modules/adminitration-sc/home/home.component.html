@@ -8,15 +8,18 @@
 
   <!-- -----seccion-comentarios-de-estudiantes--- -->
   <section class="px-4">
-    <h2 class="text-center text-white mt-4 mb-16 font-normal my-4 text-5xl text-center text-gray-200">
+    <h2 class=" mt-4 mb-16 font-normal my-4 text-5xl text-center text-gray-200">
       ¿Que dicen nuestros <br> <span class="font-bold text-[#C74C2A]">estudiantes</span>?
     </h2>
-    <div class="min-h-[50vh] grid grid-cols-2a mb-8 gap-6 container max-w-6xl mx-auto">
-      <app-cardComments class="shr"></app-cardComments>
+    <div class="min-h-[50vh] grid md:grid-cols-2a mb-8 gap-10 md:gap-6 container max-w-6xl mx-auto">
+      <app-cardComments ></app-cardComments>
       <app-cardComments></app-cardComments>
       <app-cardComments></app-cardComments>
       <app-cardComments></app-cardComments>
     </div>
+  </section>
+  <section class="relative my-10 min-h-[60vh] flex items-center justify-center">
+    <app-creatorsAtTeacher></app-creatorsAtTeacher>
   </section>
   <!-- -----seccion-desarrolladores--- -->
   <section>
@@ -24,7 +27,7 @@
       class="font-bold text-[#C74C2A]">desarrolladores</span>?</h2>
       <app-cardsDevs></app-cardsDevs>
     </section>
-    
+ 
     <!-- -----footer--- -->
   <footer class=" bg-gray-900 text-gray-200 w-full h-20 flex justify-center p">
     <div class="container mx-auto flex items-center justify-center gap-2 flex-col">
