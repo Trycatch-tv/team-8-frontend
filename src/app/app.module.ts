@@ -36,6 +36,7 @@ import { ViewCourseComponent } from './layout/view-course/view-course.component'
 import { MatStepperModule } from '@angular/material/stepper'; // Asegúrate de importar el módulo del stepper u otros módulos que necesites
 
 import { ConfirmationEmailModule } from './modules/confirmation-email/confirmation-email.module';
+import { PasswordResetModule } from './modules/password-reset/password-reset.module';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,6 @@ import { ConfirmationEmailModule } from './modules/confirmation-email/confirmati
     EditTeacherComponent,
     EditCourseComponent,
     ViewCourseComponent,
-
 
   ],
   imports: [
@@ -69,6 +69,7 @@ import { ConfirmationEmailModule } from './modules/confirmation-email/confirmati
     MatStepperModule,
     MatIconModule,
     ConfirmationEmailModule,
+    PasswordResetModule,
 
 
   ],
